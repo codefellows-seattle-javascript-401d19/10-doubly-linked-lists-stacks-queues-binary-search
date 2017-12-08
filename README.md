@@ -1,4 +1,4 @@
-![cf](https://i.imgur.com/7v5ASc8.png) Lab 10: Doubly Linked List
+![cf](https://i.imgur.com/7v5ASc8.png) Lab 10: Doubly Linked List, Binary Search, Stacks, and Queues.
 ======
 
 ## Submission Instructions
