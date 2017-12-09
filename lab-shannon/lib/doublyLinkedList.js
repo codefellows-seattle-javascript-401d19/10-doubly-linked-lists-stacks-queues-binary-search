@@ -11,7 +11,7 @@ class DoublyLinkedList{
 
   append(node){
     if(!(node instanceof DoublyLinkedList)){
-      throw new TypeError(`To add a node, you must provide an instance of a doubly linked list`);
+      throw new TypeError(`To append a node, you must provide an instance of a doubly linked list`);
     }
 
     if(this.next === null){
@@ -25,11 +25,28 @@ class DoublyLinkedList{
   };
 
   remove(nodeValue){
+    // if(this.next === null){
+    //   this.value = null;
+    // }
+
     if(this.next.value === nodeValue){
       this.next.next.previous = this;
       this.next = this.next.next;
     }
+
+    return this;
   };
+
+  prepend(node){
+    if(!(node instanceof DoublyLinkedList)){
+      throw new TypeError(`To prepend a node, you must provide an instance of a doubly linked list`);
+    }
+
+    this.previous = node;
+    node.next = this;
+
+    return this;
+  }
 }
 
 module.exports = DoublyLinkedList;

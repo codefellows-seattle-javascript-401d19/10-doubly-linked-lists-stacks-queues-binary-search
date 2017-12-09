@@ -28,4 +28,22 @@ describe(`doublyLinkedList.js`, () => {
     expect(node.next.value).toEqual(3);
     expect(node.next.previous.value).toEqual(1);
   })
+
+  // test(`If remove is called on a list with only one node it should set the first node to null`, () => {
+  //   let node = new DoublyLinkedList(1);
+  //   node.remove(1);
+  //
+  //   expect(node).toBe(null);
+  //   // expect(node.next).toBe(null);
+  //   // expect(node.previous).toBe(null);
+  // })
+
+  test(`The length method should count how many nodes are in the doubly linked list`, () => {
+    let node = new DoublyLinkedList(1);
+    node.append(new DoublyLinkedList(2));
+    node.append(new DoublyLinkedList(3));
+    node.prepend(new DoublyLinkedList(4))
+
+    expect(node.previous.value).toEqual(4);
+  })
 })
