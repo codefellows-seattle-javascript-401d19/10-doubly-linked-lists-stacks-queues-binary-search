@@ -35,7 +35,7 @@ describe(`doublyLinkedList.js`, () => {
     expect(shortList.next.previous.value).toEqual(9);
   })
 
-  test(`The remove method should remove a node with a specific value and properly redirect the deleted node's .next and .previous references`, () => {
+  test(`The remove method should remove a node with a specific value and property redirect the deleted node's .next and .previous references`, () => {
     longList.remove(2);
 
     expect(longList.next.value).toEqual(3);
@@ -50,7 +50,7 @@ describe(`doublyLinkedList.js`, () => {
   })
 
   test(`The remove method should throw an error if a node with that value does not exist`, () => {
-    // expect(() => {shortList.remove(1)}).toThrow();
+    expect(() => {longList.remove(100)}).toThrow();
   })
 
   test(`The prepend method should add a new node to the beginning of a doubly linked list with .next pointing to the the original first node and .previous pointing to null`, () => {

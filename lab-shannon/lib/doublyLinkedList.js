@@ -34,11 +34,18 @@ class DoublyLinkedList{
 
       return this;
     }
-    // if()
 
     if(this.next.value === nodeValue){
       this.next.next.previous = this;
       this.next = this.next.next;
+
+      return this;
+    }
+
+    if(this.next === null){
+      throw new Error(`A node with that value does not exist`);
+    }else{
+      this.next.remove(nodeValue);
     }
 
     return this;
