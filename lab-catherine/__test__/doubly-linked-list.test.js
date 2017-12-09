@@ -54,4 +54,36 @@ describe('linked-list.js',() => {
     expect(first.next.next).toEqual(null);
 
   });
+
+  test('testing to remove first node', () => {
+    let first = new DoublyLinkedList(10);
+    let second = new DoublyLinkedList(20);
+    let third = new DoublyLinkedList(30);
+
+    first.append(second);
+    first.append(third);
+
+    expect(first.value).toEqual(10);
+    expect(first.previous).toEqual(null);
+
+    expect(first.next.value).toEqual(20);
+    expect(first.next.previous.value).toEqual(10);
+
+    expect(first.next.next.value).toEqual(30);
+    expect(first.next.next.previous.previous.value).toEqual(10);
+
+    expect(first.next.next.next).toEqual(null);
+
+    first.remove(first);
+
+    expect(first.next.previous).toEqual(null);
+
+  });
+
+  test('remove should throw an error if node is not an instance of DoublyLinkedList', () => {
+    let first = 10;
+    expect(() =>
+      first.remove(first)
+    ).toThrow();
+  });
 });
