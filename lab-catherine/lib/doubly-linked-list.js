@@ -22,32 +22,21 @@ class DoublyLinkedList{
     return this;
   }
 
-  // remove(node){
-  //   if(!(node instanceof LinkedList))
-  //     throw new TypeError('<node> should be an instance of LinkedList');
-  //   if(!this.next)
-  //     return this;
-  //   if(this.next === node){
-  //     this.next = this.next.next;
-  //   } else {
-  //     this.next.remove(node);
-  //   }
-  //   return this;
-  // }
+  remove(node){
+    if(!(node instanceof DoublyLinkedList))
+      throw new TypeError('<node> should be an instance of DoublyLinkedList');
+    if(!this.next)
+      return this;
+    if(this.next === node){
+      this.next = this.next.next;
+      this.next.previous = this;
+    } else {
+      this.next.remove(node);
+    }
+    return this;
+  }
 }
 
 module.exports = DoublyLinkedList;
-
-
-
-
-  // find(value){
-  //   if(value === this.value)
-  //     return this;
-  //   if(this.next === null)
-  //     return null;
-  //   else
-  //     return this.next.find(value);
-  // }
 
 
