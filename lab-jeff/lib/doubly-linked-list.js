@@ -27,11 +27,16 @@ class DoublyLinkedList{
     if(!(node instanceof DoublyLinkedList))
       throw new TypeError('<node> should be an instance of LinkedList');
 
+    if(this === node) {
+      this.next.previous = null;
+      return this.next;
+    }
     if(!this.next)
       return this;
     if(this.next === node){
       this.next = this.next.next;
-      this.next.previous = this;
+      if(this.next)
+        this.next.previous = this;
     } else {
       this.next.remove(node);
     }

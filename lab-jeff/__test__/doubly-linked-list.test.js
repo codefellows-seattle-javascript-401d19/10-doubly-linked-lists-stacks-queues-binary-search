@@ -52,4 +52,54 @@ describe('doubly-linked-list.js',() => {
 
   });
 
+  test('remove should update the next and previous property of surrounding elements such that the passed in node is no longer referenced.  Testing remove first node.', () => {
+    let first = new DoublyLinkedList(10);
+    let second = new DoublyLinkedList(20);
+    let third = new DoublyLinkedList(30);
+
+    first.append(second);
+    first.append(third);
+
+    expect(first.value).toEqual(10);
+    expect(first.previous).toEqual(null);
+    expect(first.next.value).toEqual(20);
+    expect(first.next.previous.value).toEqual(10);
+    expect(first.next.next.value).toEqual(30);
+    expect(first.next.next.previous.previous.value).toEqual(10);
+    expect(first.next.next.next).toEqual(null);
+
+    first.remove(first);
+
+    expect(second.previous).toEqual(null);
+  });
+
+  test('remove should throw error if called on something that is not an instance of DoublyLinkedList.', () => {
+    let first = 10;
+
+    expect(() => {
+      first.remove(first);
+    }).toThrow();
+  });
+
+  test('remove should update the next and previous property of surrounding elements such that the passed in node is no longer referenced.  Testing remove last node.', () => {
+    let first = new DoublyLinkedList(10);
+    let second = new DoublyLinkedList(20);
+    let third = new DoublyLinkedList(30);
+
+    first.append(second);
+    first.append(third);
+
+    expect(first.value).toEqual(10);
+    expect(first.previous).toEqual(null);
+    expect(first.next.value).toEqual(20);
+    expect(first.next.previous.value).toEqual(10);
+    expect(first.next.next.value).toEqual(30);
+    expect(first.next.next.previous.previous.value).toEqual(10);
+    expect(first.next.next.next).toEqual(null);
+
+    first.remove(third);
+
+    expect(first.next.next).toEqual(null);
+  });
+
 });
