@@ -29,8 +29,13 @@ class DoublyLinkedList{
   };
 
   remove(nodeValue){
-    if(this.value === nodeValue){
+    if(this.value === nodeValue && this.next === null){
       this.value = null;
+
+      return this;
+    }else if(this.value === nodeValue && this.next !== null){
+      this.value = null;
+      this.next.previous = this.previous;
 
       return this;
     }

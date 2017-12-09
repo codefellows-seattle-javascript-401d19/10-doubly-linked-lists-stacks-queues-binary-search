@@ -9,6 +9,8 @@ longList.append(new DoublyLinkedList(3));
 let shortList = new DoublyLinkedList(9);
 shortList.append(new DoublyLinkedList(11));
 
+let singleList = new DoublyLinkedList(5);
+
 let emptyList;
 
 describe(`doublyLinkedList.js`, () => {
@@ -42,8 +44,14 @@ describe(`doublyLinkedList.js`, () => {
     expect(longList.next.previous.value).toEqual(1);
   })
 
+  test(`The remove method should set the node value to null if removing the first item in a list and redirect the deleted node's .next and .previous references`, () => {
+    shortList.remove(9);
+
+    expect(shortList.value).toEqual(null);
+    expect(shortList.next.previous).toEqual(null);
+  })
+
   test(`The remove method should set the node value to null if removing the only node in the list`, () => {
-    let singleList = new DoublyLinkedList(5);
     singleList.remove(5);
 
     expect(singleList.value).toBe(null);
