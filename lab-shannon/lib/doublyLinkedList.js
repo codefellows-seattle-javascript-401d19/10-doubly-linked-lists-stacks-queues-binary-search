@@ -24,10 +24,10 @@ class DoublyLinkedList{
     return this;
   };
 
-  remove(node){
-    if(!(node instanceof DoublyLinkedList)){
-      throw new TypeError(`To remove a node, you must provide an instance of a doubly linked list`);
-      return;
+  remove(nodeValue){
+    if(this.next.value === nodeValue){
+      this.next.next.previous = this;
+      this.next = this.next.next;
     }
   };
 }
