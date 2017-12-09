@@ -25,7 +25,7 @@ describe('binary-search.js', () => {
   });
 
   test('binarySearch should throw an error if sortedArray is not an array', () => {
-    let invalidArray = 'not VALID array';
+    let invalidArray = 'not a VALID array';
     expect(() => {
       binarySearch(invalidArray, 30);
     }).toThrow();
