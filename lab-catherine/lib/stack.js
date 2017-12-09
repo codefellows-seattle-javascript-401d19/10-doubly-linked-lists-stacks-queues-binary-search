@@ -1,17 +1,24 @@
 'use strict';
 
+const DoublyLinkedList = require('./doubly-linked-list');
+
 let stack = module.exports = {};
 
 stack.createStack = () => {
 
-  let data = [];
-
   return {
     push: (value) => {
-      data.push(value);
+      DoublyLinkedList.append(value);
     },
-    pop: () => {
-      return data.pop();
+    pop: (value) => {
+      while(this.next) {
+        if(!this.next) {
+          this.previous = this;
+          this.next.remove(value);
+        }
+        return this;
+      }
+      return DoublyLinkedList.remove(value);
     },
   };
 };
