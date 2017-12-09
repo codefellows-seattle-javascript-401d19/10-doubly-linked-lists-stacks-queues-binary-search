@@ -43,6 +43,15 @@ class DoublyLinkedList{
     return this;
   }
 
+  find(value){
+    if(this.value === value) {
+      return this;
+    } else if (this.next === null){
+      return null;
+    } else {
+      return this.next.find(value);
+    }
+  }
 
 }
 
