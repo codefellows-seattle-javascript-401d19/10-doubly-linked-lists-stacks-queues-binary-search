@@ -14,6 +14,10 @@ class DoublyLinkedList{
       throw new TypeError(`To append a node, you must provide an instance of a doubly linked list`);
     }
 
+    if(this.value === undefined){
+      throw new Error(`The linked list does not exist. You must create one before appending a new node`);
+    }
+
     if(this.next === null){
       this.next = node;
       node.previous = this;

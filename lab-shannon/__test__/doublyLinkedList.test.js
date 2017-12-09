@@ -6,6 +6,10 @@ let longNode = new DoublyLinkedList(1);
 longNode.append(new DoublyLinkedList(2));
 longNode.append(new DoublyLinkedList(3));
 
+let shortList = new DoublyLinkedList(1);
+
+let emptyList = new DoublyLinkedList();
+
 describe(`doublyLinkedList.js`, () => {
   test(`The append method should add a node with .next pointing to null and .previous pointing to the previous node`, () => {
     expect(longNode.next.value).toEqual(2);
@@ -17,6 +21,10 @@ describe(`doublyLinkedList.js`, () => {
 
     expect(longNode.next.next.next).toEqual(null);
     expect(longNode.next.next.previous.value).toEqual(2);
+
+  })
+  test(`The append method should throw an error if trying to add a node to an empty list`, () => {
+    expect(() => {emptyList.append(new DoublyLinkedList(9))}).toThrow();
   })
 
   test(`The remove method should remove a node with a specific value and properly redirect the deleted node's .next and .previous references`, () => {
@@ -35,7 +43,7 @@ describe(`doublyLinkedList.js`, () => {
   //   // expect(node.previous).toBe(null);
   // })
 
-  test(`The length method should count how many nodes are in the doubly linked list`, () => {
+  test(`The prepend method should add a new node to the beginning of a doubly linked list`, () => {
     longNode.prepend(new DoublyLinkedList(4))
 
     expect(longNode.previous.value).toEqual(4);
