@@ -13,18 +13,18 @@ let sortedObjects = [
 
 describe(`binarySearch.js`, () => {
   test(`An error should be returned if binary search is used on an array of non-objects`, () => {
-    // expect(() => {binarySearch([1,2,3,4,5], 5)}).toThrow();
+    expect(() => {binarySearch(sortedObjects, 'fish')}).toThrow();
   });
 
-  // test(`An error should be returned if binary search is used on an empty array`, () => {
-  //
-  // });
+  test(`An error should be returned if binary search is used on an empty array`, () => {
+    expect(() => {binarySearch([], 25)}).toThrow('The array provided is empty');
+  });
 
   test(`Binary search should return the object with the id matching the id provided`, () => {
     expect(binarySearch(sortedObjects, 23)).toEqual({id: 23, name: 'flower'});
   });
 
-  // test(`Binary search should return an empty object if nothing is found with the id provided`, () => {
-  //
-  // });
+  test(`Binary search should return an empty object if nothing is found with the id provided`, () => {
+    expect(binarySearch(sortedObjects, 27)).toEqual({});
+  });
 });
