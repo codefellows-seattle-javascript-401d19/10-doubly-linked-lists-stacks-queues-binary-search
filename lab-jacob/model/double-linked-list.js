@@ -22,5 +22,20 @@ class DoubleLinkedListModule{
 
     return this;
   }
+
+  //REMOVE METHOD
+  remove(node){
+    if(!(node instanceof DoubleLinkedListModule))
+      throw new TypeError(`<node> should be an instance of DoubleLinkedList`);
+
+    if(this.next.remove(node)){ 
+      this.next.next = this.next;
+      this.next.previous = this; 
+    }
+    return this;
+  }
+
 }
+
+//LENGTH METHOD linkedListLength
 module.exports = DoubleLinkedListModule;
