@@ -112,4 +112,28 @@ describe('linked-list.js',() => {
     ).toThrow();
   });
 
+  test('find should return the node that contains the given value', () => {
+    let first = new DoublyLinkedList(10);
+    let second = new DoublyLinkedList(20);
+    let third = new DoublyLinkedList(30);
+
+    first.append(second);
+    first.append(third);
+
+    expect(first.find(20)).toEqual(second);
+
+  });
+
+  test('find should return null if value does not exist in the list', () => {
+    let first = new DoublyLinkedList(10);
+    let second = new DoublyLinkedList(20);
+    let third = new DoublyLinkedList(30);
+
+    first.append(second);
+    first.append(third);
+
+    expect(first.find(40)).toBeNull();
+
+  });
+
 });

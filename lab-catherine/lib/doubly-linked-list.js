@@ -39,7 +39,17 @@ class DoublyLinkedList{
     }
     return this;
   }
+  
+  find(value) {
+    if(value === this.value)
+      return this;
+    if(this.next === null)
+      return null;
+    else
+      return this.next.find(value);
+  }
 }
+
 
 module.exports = DoublyLinkedList;
 
