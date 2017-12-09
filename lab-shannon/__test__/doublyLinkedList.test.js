@@ -62,12 +62,15 @@ describe(`doublyLinkedList.js`, () => {
   })
 
   test(`The prepend method should add a new node to the beginning of a doubly linked list with .next pointing to the the original first node and .previous pointing to null`, () => {
-    longList.prepend(new DoublyLinkedList(4))
+    longList.prepend(new DoublyLinkedList(4));
+    shortList.prepend(new DoublyLinkedList(27));
 
     expect(longList.previous.value).toEqual(4);
+    expect(shortList.previous.value).toEqual(27);
   })
 
   test(`The prepend method should throw an error if trying to add a node to an empty list or the node provided is invalid`, () => {
     expect(() => {emptyList.prepend(new DoublyLinkedList(9))}).toThrow();
+    expect(() => {shortList.prepend(24)}).toThrow();
   })
 })
