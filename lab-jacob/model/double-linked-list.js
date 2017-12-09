@@ -27,11 +27,14 @@ class DoubleLinkedListModule{
   remove(node){
     if(!(node instanceof DoubleLinkedListModule))
       throw new TypeError(`<node> should be an instance of DoubleLinkedList`);
-
-    if(this.next.remove(node)){ 
-      this.next.next = this.next;
-      this.next.previous = this; 
-    }
+    if (!this.next){
+      this.next = node;
+      node.previous = this;
+      node.next.next = node.next;
+      node.next.next.previous.previous = node.previous; 
+    }else 
+      this.next.remove(node);
+    
     return this;
   }
 
