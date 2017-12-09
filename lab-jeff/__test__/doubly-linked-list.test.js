@@ -102,7 +102,7 @@ describe('doubly-linked-list.js',() => {
     expect(first.next.next).toEqual(null);
   });
 
-  test('find should return the node containing a given value', () => {
+  test('find should return the node containing a given value.  Testing middle node', () => {
     let first = new DoublyLinkedList(10);
     let second = new DoublyLinkedList(20);
     let third = new DoublyLinkedList(30);
@@ -123,4 +123,28 @@ describe('doubly-linked-list.js',() => {
 
     expect(first.find(40)).toBeNull();
   });
+
+  test('find should return the node containing a given value.  Testing first node.', () => {
+    let first = new DoublyLinkedList(10);
+    let second = new DoublyLinkedList(20);
+    let third = new DoublyLinkedList(30);
+
+    first.append(second);
+    first.append(third);
+
+    expect(first.find(10)).toEqual(first);
+  });
+
+  test('find should return the node containing a given value.  Testing last node.', () => {
+    let first = new DoublyLinkedList(10);
+    let second = new DoublyLinkedList(20);
+    let third = new DoublyLinkedList(30);
+
+    first.append(second);
+    first.append(third);
+
+    expect(first.find(30)).toEqual(third);
+  });
+
+
 });
