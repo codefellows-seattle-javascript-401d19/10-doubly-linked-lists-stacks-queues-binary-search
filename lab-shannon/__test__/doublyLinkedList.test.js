@@ -37,7 +37,7 @@ describe(`doublyLinkedList.js`, () => {
     expect(shortList.next.previous.value).toEqual(9);
   })
 
-  test(`The remove method should remove a node with a specific value and property redirect the deleted node's .next and .previous references`, () => {
+  test(`The remove method should remove a node with a specific value and properly redirect the deleted node's .next and .previous references`, () => {
     longList.remove(2);
 
     expect(longList.next.value).toEqual(3);
