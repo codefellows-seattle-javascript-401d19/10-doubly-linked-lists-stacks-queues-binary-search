@@ -18,10 +18,11 @@ test('Should append a node to the linked list', () => {
   expect(result.previous).toEqual(null);
 
   expect(result.next.value).toEqual(4);
-  expect(result.previous.value).toEqual(5);
+  // console.log(result.previous, 'previous');
+  expect(result.next.previous.value).toEqual(5);
 
   expect(result.next.next.value).toEqual(10);
   expect(result.next.next.previous.value).toEqual(4);
 
-  expect.addSnapshotSerializer(result.next.next.next).toEqual(null);
+  expect(result.next.next.next).toEqual(null);
 });
