@@ -2,19 +2,23 @@
 
 let stack = module.exports = {};
 
+const dll = require('./doubly-linked-list');
+
 stack.createStack = () => {
-  //-----------------------------
-  // Vinicio - This won't be accessible outside the module
-  //-----------------------------
-  let data = [];
-  //-----------------------------
+
 
   return {
     push: (value) => {
-      data.push(value);
+      dll.append(value);
     },
     pop: () => {
-      return data.pop();
+      while(this.next){
+        this.previous = this;
+        if(!this.next)
+          return this;
+      }
+
+      return dll.remove(this);
     },
   };
 };
