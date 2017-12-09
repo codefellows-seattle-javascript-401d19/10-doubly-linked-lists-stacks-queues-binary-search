@@ -24,7 +24,13 @@ describe('binary-search.js', () => {
     }).toThrow();
   });
 
-  
+  test('binarySearch should throw an error if sortedArray is not an array', () => {
+    let invalidArray = 'not VALID array';
+    expect(() => {
+      binarySearch(invalidArray, 30);
+    }).toThrow();
+  });
+
 
 
 });

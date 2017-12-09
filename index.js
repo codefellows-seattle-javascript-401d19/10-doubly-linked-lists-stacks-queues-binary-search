@@ -7,4 +7,4 @@ let sampleArray = [
   {id: 30, name : 'The Hound'},
 ];
 
-console.log(binarySearch(sampleArray, 'ten'));
+console.log(binarySearch(sampleArray, 30));
