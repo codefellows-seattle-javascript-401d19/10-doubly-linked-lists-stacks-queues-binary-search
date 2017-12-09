@@ -31,7 +31,9 @@ class DoublyLinkedList{
       return this;
     if(this.next === node){
       this.next = this.next.next;
-      this.next.previous = this;
+      if(this.next) {
+        this.next.previous = this;
+      }
     } else {
       this.next.remove(node);
     }
