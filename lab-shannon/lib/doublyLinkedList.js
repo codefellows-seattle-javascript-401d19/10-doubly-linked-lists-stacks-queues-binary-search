@@ -29,9 +29,12 @@ class DoublyLinkedList{
   };
 
   remove(nodeValue){
-    // if(this.next === null){
-    //   this.value = null;
-    // }
+    if(this.value === nodeValue){
+      this.value = null;
+
+      return this;
+    }
+    // if()
 
     if(this.next.value === nodeValue){
       this.next.next.previous = this;
@@ -44,6 +47,10 @@ class DoublyLinkedList{
   prepend(node){
     if(!(node instanceof DoublyLinkedList)){
       throw new TypeError(`To prepend a node, you must provide an instance of a doubly linked list`);
+    }
+
+    if(this === undefined){
+      throw new Error(`The linked list does not exist. You must create one before prepending a new node`);
     }
 
     this.previous = node;
