@@ -136,4 +136,28 @@ describe('linked-list.js',() => {
 
   });
 
+  test('find should return the value of the first node if requested', () => {
+    let first = new DoublyLinkedList(10);
+    let second = new DoublyLinkedList(20);
+    let third = new DoublyLinkedList(30);
+
+    first.append(second);
+    first.append(third);
+
+    expect(first.find(10)).toEqual(first);
+
+  });
+
+  test('find should return the value of the last node if requested', () => {
+    let first = new DoublyLinkedList(10);
+    let second = new DoublyLinkedList(20);
+    let third = new DoublyLinkedList(30);
+
+    first.append(second);
+    first.append(third);
+
+    expect(first.find(30)).toEqual(third);
+
+  });
+
 });
