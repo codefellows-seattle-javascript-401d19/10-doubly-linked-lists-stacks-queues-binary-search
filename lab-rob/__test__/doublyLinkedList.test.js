@@ -3,9 +3,12 @@
 const DoublyLinkedList = require('../model/doublyLinkedList');
 
 describe('doublyLinkedList.js', () => {
-  let head;
+  let head, firstLink, secondLink, thirdLink;
   beforeEach(() => {
     head = new DoublyLinkedList(0);
+    firstLink = new DoublyLinkedList(1);
+    secondLink = new DoublyLinkedList(2);
+    thirdLink = new DoublyLinkedList(3);
   });
 
   test('Instantiating a new object should return a node with a value and null previous/next properties.', () => {
@@ -15,11 +18,12 @@ describe('doublyLinkedList.js', () => {
   });
 
   test('Calling append on any node in the list should add it to the end of the list.', () => {
-    let firstLink = new DoublyLinkedList(1);
-    let secondLink = new DoublyLinkedList(2);
-    let thirdLink = new DoublyLinkedList(3);
+    firstLink = new DoublyLinkedList(1);
+    secondLink = new DoublyLinkedList(2);
+    thirdLink = new DoublyLinkedList(3);
     head.append(firstLink).append(secondLink);
     firstLink.append(thirdLink);
+    console.log(head);
 
     expect(head.next.next.next).toEqual(thirdLink);
   });
