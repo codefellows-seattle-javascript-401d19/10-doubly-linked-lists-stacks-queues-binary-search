@@ -47,6 +47,14 @@ class DoublyLinkedList {
 
     return this;
   }
+
+  getTail() {
+    let current = this;
+    while (current.next) {
+      current = current.next;
+    }
+    return current;
+  }
 }
 
 module.exports = DoublyLinkedList;

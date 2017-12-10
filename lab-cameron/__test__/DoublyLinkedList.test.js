@@ -39,4 +39,15 @@ describe('linked-list.js', () => {
     expect(result.remove(testList)).toEqual(result);
     expect(result.remove(result)).toEqual(null);
   });
+
+  test('getTail should return the DoublyLinkedLists tail node', () => {
+    let result = new DoublyLinkedList(5);
+    let testList = new DoublyLinkedList(4);
+
+    expect(result.getTail()).toEqual(result);
+
+    result.append(testList);
+    expect(result.getTail()).toEqual(testList);
+    expect(result.remove(result.getTail())).toEqual(result);
+  });
 });
