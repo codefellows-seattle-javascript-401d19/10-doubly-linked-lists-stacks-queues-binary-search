@@ -13,6 +13,23 @@ const Queue = function() {
       items = node;
   };
 
+  this.dequeue = () => {
+    let returnValue = null;
+
+    // items ?
+    //   returnValue = items.remove(items.getHead()) :
+    //   returnValue = null;
+
+    if (items) {
+      returnValue = items.getHead();
+      items = items.remove(returnValue);
+    }
+
+    console.log(items);
+
+    return returnValue;
+  };
+
   this.getLength = () => {
     let returnValue = null;
 

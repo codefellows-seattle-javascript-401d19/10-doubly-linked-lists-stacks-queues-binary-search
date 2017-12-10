@@ -19,10 +19,8 @@ const Stack = function() {
     if (items) {
       returnValue = items.getTail();
       items = items.remove(returnValue);
-    } else {
-      returnValue = null;
     }
-
+    
     return returnValue;
   };
 
@@ -38,6 +36,7 @@ const Stack = function() {
 
   this.getLength = () => {
     let returnValue = null;
+
     items ?
       returnValue = items.getLength() :
       returnValue = 0;
