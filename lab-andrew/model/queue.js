@@ -31,7 +31,7 @@ class Queue{
   }
 
   dequeue(){
-    let value = this.value;
+    const value = this.value;
     this._delete();
     return value;
   }

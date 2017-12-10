@@ -24,7 +24,7 @@ class Stack{
   stackPop(){
     if (!this.next){
       if (!this.prev){
-        let value = this.value;
+        const value = this.value;
         delete this.value;
         delete this.prev;
         delete this.next;
