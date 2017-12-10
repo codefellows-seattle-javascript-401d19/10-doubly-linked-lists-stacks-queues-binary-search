@@ -31,6 +31,9 @@ class Queue{
   }
 
   dequeue(){
+    if (this.next === undefined){
+      throw new TypeError('cannot dequeue from empty queue');
+    }
     const value = this.value;
     this._delete();
     return value;

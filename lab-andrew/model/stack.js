@@ -22,6 +22,9 @@ class Stack{
   }
 
   stackPop(){
+    if (this.prev === undefined){
+      throw new TypeError('cannot Pop from empty stack');
+    }
     if (!this.next){
       if (!this.prev){
         const value = this.value;

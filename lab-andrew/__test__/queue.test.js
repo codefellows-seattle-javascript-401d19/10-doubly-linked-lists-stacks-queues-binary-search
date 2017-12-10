@@ -11,11 +11,15 @@ describe('queue.js', () => {
     expect(queue.dequeue()).toEqual(1);
     expect(queue.dequeue()).toEqual(2);
     expect(queue.dequeue()).toEqual(3);
-    expect(queue.dequeue()).toEqual(undefined);
-    expect(queue.dequeue()).toEqual(undefined);
   });
 
-  test('Queue work with multiple data types', () => {
+  test('Should throw if dequeue is attempted on empty queue', () => {
+    const queue = new Queue(1);
+    queue.dequeue();
+    expect(() => queue.dequeue()).toThrow();
+  });
+
+  test('Queue should work with multiple data types', () => {
     const queue = new Queue('hey');
     queue.enqueue(true);
     queue.enqueue(undefined);
@@ -25,7 +29,6 @@ describe('queue.js', () => {
     expect(queue.dequeue()).toEqual(true);
     expect(queue.dequeue()).toEqual(undefined);
     expect(queue.dequeue()).toEqual({});
-    expect(queue.dequeue()).toEqual(undefined);
   });
 
   test('Queue should work with complex orders', () => {
