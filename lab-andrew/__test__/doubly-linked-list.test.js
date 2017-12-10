@@ -121,11 +121,42 @@ describe('doubly-linked-list.js',() => {
     expect(first).toEqual({});
   });
 
-  test('delete and append should throw errors if argument passed is not a node', () => {
+  test('DoublyLinkedList methods should throw errors if argument passed is not a node', () => {
     let dll = new DoublyLinkedList(10);
 
     expect(() => dll.append('not a node')).toThrow();
     expect(() => dll.delete('not a node')).toThrow();
+    expect(() => dll.listLength('not a node')).toThrow();
+  });
+
+  test('length should return the length of the DoublyLinkedList', () => {
+    let long = new DoublyLinkedList(1);
+    long.append(new DoublyLinkedList(2));
+    long.append(new DoublyLinkedList(3));
+
+    let shortLength = long.listLength(long);
+
+    long.append(new DoublyLinkedList(4));
+    long.append(new DoublyLinkedList(5));
+
+    let longLength = long.listLength(long);
+
+    expect(shortLength).toEqual(3);
+    expect(longLength).toEqual(5);
+  });
+
+  test('length should return 1 if DoublyLinkedList only has one node', () => {
+    let one = new DoublyLinkedList(1);
+
+    let oneLong = one.listLength(one);
+    expect(oneLong).toEqual(1);
+  });
+
+  test('length should throw error if DoublyLinkedList was a linked list that had all nodes removed', () => {
+    let weird = new DoublyLinkedList('weird');
+    weird.delete(weird);
+
+    expect(() => weird.listLength(weird)).toThrow();
   });
 
 });
