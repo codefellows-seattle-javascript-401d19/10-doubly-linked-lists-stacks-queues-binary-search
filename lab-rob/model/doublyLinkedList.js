@@ -59,6 +59,25 @@ class DoublyLinkedList {
     return this;
   }
 
+  remove() {
+    if(!this.previous && !this.next)
+      return this;
+
+    if(!this.previous) {
+      this.value = this.next.value;
+      this.next = this.next.next;
+      return this;
+    }
+
+    if(!this.next) {
+      this.previous.next = null;
+      return this.previous;
+    }
+
+    this.previous.next = this.next;
+    this.next.previous = this.previous;
+    return this.previous;
+  }
 }
 
 
@@ -68,12 +87,3 @@ let isNode = node => {
   if(!(node instanceof DoublyLinkedList))
     throw new TypeError('<node> must be an instance of DoublyLinkedList');
 };
-
-// let head = new DoublyLinkedList(0);
-// let firstLink = new DoublyLinkedList(1);
-// let secondLink = new DoublyLinkedList(2);
-// let thirdLink = new DoublyLinkedList(3);
-
-// head.append(firstLink).append(secondLink);
-// firstLink.append(thirdLink);
-// console.log(thirdLink.previous.previous.previous.previous);
