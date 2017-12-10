@@ -1,10 +1,10 @@
 'use strict';
 
-let Stack = require('../model/stack');
+const Stack = require('../model/stack');
 
 describe('stack.js', () => {
   test('Stacks should have LIFO behavior', () => {
-    let stack = new Stack();
+    const stack = new Stack();
 
     stack.stackPush(1);
     stack.stackPush(2);
