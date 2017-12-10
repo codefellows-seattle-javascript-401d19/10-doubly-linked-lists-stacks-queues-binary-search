@@ -20,6 +20,9 @@ const Stack = function() {
       returnValue = items.remove(items.getTail()) :
       returnValue = null;
 
+    // update internal items state
+    items = items.remove(items.getTail());
+
     return returnValue;
   };
 
