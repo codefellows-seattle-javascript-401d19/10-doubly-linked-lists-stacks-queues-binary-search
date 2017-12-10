@@ -1,0 +1,11 @@
+{
+  "name": "lab-matt",
+  "version": "1.0.0",
+  "description": "Doubly Linked Lists | Stacks | Queues | Binary Search",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest -i --coverage"
+  },
+  "author": "Matthew LeBlanc",
+  "license": "ISC"
+}
