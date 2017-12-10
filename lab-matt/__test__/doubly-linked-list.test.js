@@ -8,6 +8,7 @@ describe('linked-list.js', () => {
     let result = new LinkedList(5);
     expect(result.value).toEqual(5);
     expect(result.next).toEqual(null);
+    expect(result.previous).toEqual(null);
   });
 
   test('insertion should properly modify the next property', () => {
@@ -16,9 +17,14 @@ describe('linked-list.js', () => {
     result.append(new LinkedList(10));
 
     expect(result.value).toEqual(5);
+    
     expect(result.next.value).toEqual(4);
+    expect(result.next.previous.value).toEqual(5);
+    
     expect(result.next.next.value).toEqual(10);
+    expect(result.next.next.previous.value).toEqual(4);
     expect(result.next.next.next).toEqual(null);
+    
 
     expect(() => result.append('seven')).toThrow();    
   });
@@ -40,6 +46,9 @@ describe('linked-list.js', () => {
     list.remove(second);
 
     expect(list.value).toEqual(10);
+    expect(list.previous).toEqual(null);
+    
+    expect(list.next.previous.value).toEqual(10);
     expect(list.next.value).toEqual(30);
     expect(list.next.next).toEqual(null);
 
@@ -47,6 +56,9 @@ describe('linked-list.js', () => {
     list.append(fourth);
 
     expect(list.next.next.value).toEqual(40);
+    expect(list.next.next.previous.value).toEqual(30);
+    expect(list.next.previous.value).toEqual(10);
+    
     expect(list.next.next.next).toEqual(null);
     expect(() => list.remove('seven')).toThrow();
     

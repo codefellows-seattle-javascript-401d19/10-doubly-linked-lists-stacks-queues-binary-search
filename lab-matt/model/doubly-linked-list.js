@@ -5,6 +5,7 @@ class LinkedList{
   constructor(value) {
     this.value = value;
     this.next = null;
+    this.previous = null;
   }
 
   append(node) {
@@ -12,10 +13,12 @@ class LinkedList{
       throw new TypeError('<node> should be an instance of LinkedList');
     
     // mattL - we know this is the last element if there is no next (null)
-    if (!this.next) 
+    if (!this.next) {
       this.next = node;
-    else
+      this.next.previous = this;
+    } else {
       this.next.append(node);
+    }
     
     return this;
   }
@@ -25,13 +28,15 @@ class LinkedList{
       throw new TypeError('<node> should be an instance of LinkedList');
 
     if (this.next.next === null && this.next === node)
+
       return this.next = null;
 
-    if (this.next === node) 
+    if (this.next === node) {
+      this.next.next.previous = this;
       return this.next = this.next.next;
-    else 
+    } else {
       return this.next.remove(node);
-    
+    }
 
   }
 
