@@ -11,6 +11,15 @@ describe('linked-list.js', () => {
     expect(result.prev).toEqual(null);
   });
 
+  test('Should throw an error if list is appended with non-node', () => {
+    const result = new DoublyLinkedList(5);
+    const testList = 'not a node';
+
+    expect(() => {
+      result.append(testList);
+    }).toThrow();
+  });
+
   test('insertion should properly modify the next property', () => {
     const result = new DoublyLinkedList(5);
     result.append(new DoublyLinkedList(4));
