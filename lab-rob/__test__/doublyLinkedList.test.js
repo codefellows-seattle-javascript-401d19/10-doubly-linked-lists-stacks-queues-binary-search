@@ -94,12 +94,13 @@ describe('doublyLinkedList.js', () => {
   });
 
   describe('remove()', () => {
-    test('Calling remove on a head node should reassign the value and next properties of the head node to equal that of the next node.', () => {
+    test('Calling remove on a head node should reassign the value and next properties of the head node to equal that of the next node, and reassign the previous property of the next node to this.', () => {
       head.append(firstLink).append(secondLink);
       head.remove();
 
       expect(head.value).toEqual(1);
       expect(head.next).toEqual(secondLink);
+      expect(secondLink.previous).toEqual(head);
     });
 
     test('Calling remove on a middle node should connect the previous and next nodes.', () => {

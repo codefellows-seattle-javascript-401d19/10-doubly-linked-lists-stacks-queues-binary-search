@@ -68,6 +68,7 @@ class DoublyLinkedList {
     if(!this.previous) {
       this.value = this.next.value;
       this.next = this.next.next;
+      this.next.previous = this;
       return this;
     }
 
