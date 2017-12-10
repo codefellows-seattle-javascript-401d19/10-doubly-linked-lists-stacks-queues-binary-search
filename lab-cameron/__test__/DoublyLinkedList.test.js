@@ -4,7 +4,7 @@ const DoublyLinkedList = require('../model/doubly-linked-list');
 
 describe('linked-list.js', () => {
   test('A list with a single element, should have a value and no next', () => {
-    let result = new DoublyLinkedList(5);
+    const result = new DoublyLinkedList(5);
 
     expect(result.value).toEqual(5);
     expect(result.next).toEqual(null);
@@ -12,7 +12,7 @@ describe('linked-list.js', () => {
   });
 
   test('insertion should properly modify the next property', () => {
-    let result = new DoublyLinkedList(5);
+    const result = new DoublyLinkedList(5);
     result.append(new DoublyLinkedList(4));
     result.append(new DoublyLinkedList(10));
 
@@ -29,8 +29,8 @@ describe('linked-list.js', () => {
   });
 
   test('deletion should properly remove specified element', () => {
-    let result = new DoublyLinkedList(5);
-    let testList = new DoublyLinkedList(4);
+    const result = new DoublyLinkedList(5);
+    const testList = new DoublyLinkedList(4);
 
     result.append(testList);
     expect(result.next.value).toEqual(4);
@@ -44,13 +44,24 @@ describe('linked-list.js', () => {
   });
 
   test('getTail should return the DoublyLinkedLists tail node', () => {
-    let result = new DoublyLinkedList(5);
-    let testList = new DoublyLinkedList(4);
+    const result = new DoublyLinkedList(5);
+    const testList = new DoublyLinkedList(4);
 
     expect(result.getTail()).toEqual(result);
 
     result.append(testList);
     expect(result.getTail()).toEqual(testList);
     expect(result.remove(result.getTail())).toEqual(result);
+  });
+
+  test('getHead should return the head of the DoublyLinkedList', () => {
+    const result = new DoublyLinkedList(5);
+    const testList = new DoublyLinkedList(4);
+
+    expect(result.getHead()).toEqual(result);
+    expect(testList.getHead()).toEqual(testList);
+
+    result.append(testList);
+    expect(result.getHead().next).toEqual(testList);
   });
 });

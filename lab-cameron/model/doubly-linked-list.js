@@ -62,6 +62,10 @@ class DoublyLinkedList {
     }
     return current;
   }
+
+  getHead() {
+    return this;
+  }
 }
 
 module.exports = DoublyLinkedList;
