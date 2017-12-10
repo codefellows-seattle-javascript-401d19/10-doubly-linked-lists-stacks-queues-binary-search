@@ -18,8 +18,15 @@ class DoublyLinkedLists{
     else 
       this.next.append(node);
 
-      return this;
+    return this;
   }
+
+  // TODO : add remove method that removes a node from the DLL by reference
+  remove(node){
+
+  }
+
+  // TODO : add a method of our choice to the constructor
 }
 
 module.exports = DoublyLinkedLists;
