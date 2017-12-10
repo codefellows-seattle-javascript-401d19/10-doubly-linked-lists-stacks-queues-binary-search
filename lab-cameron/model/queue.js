@@ -16,16 +16,22 @@ const Queue = function() {
   this.dequeue = () => {
     let returnValue = null;
 
-    // items ?
-    //   returnValue = items.remove(items.getHead()) :
-    //   returnValue = null;
-
     if (items) {
       returnValue = items.getHead();
       items = items.remove(returnValue);
     }
 
     console.log(items);
+
+    return returnValue;
+  };
+
+  this.front = () => {
+    let returnValue = null;
+
+    items ?
+      returnValue = items.getHead().value :
+      returnValue = null;
 
     return returnValue;
   };
