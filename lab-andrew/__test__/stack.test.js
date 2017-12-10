@@ -4,9 +4,7 @@ const Stack = require('../model/stack');
 
 describe('stack.js', () => {
   test('Stacks should have LIFO behavior', () => {
-    const stack = new Stack();
-
-    stack.stackPush(1);
+    const stack = new Stack(1);
     stack.stackPush(2);
     stack.stackPush(3);
 

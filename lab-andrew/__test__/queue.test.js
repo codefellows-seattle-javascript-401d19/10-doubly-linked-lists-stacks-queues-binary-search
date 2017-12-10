@@ -4,9 +4,7 @@ const Queue = require('../model/queue');
 
 describe('queue.js', () => {
   test('Queue should have FIFO behavior', () => {
-    const queue = new Queue();
-
-    queue.enqueue(1);
+    const queue = new Queue(1);
     queue.enqueue(2);
     queue.enqueue(3);
 

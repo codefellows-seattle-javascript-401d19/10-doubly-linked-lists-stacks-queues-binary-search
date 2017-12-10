@@ -1,16 +1,40 @@
 'use strict';
 
 class Stack{
-  constructor(){
-    this._data = [];
+  constructor(value){
+    this.value = value;
+    this.next = null;
+    this.prev = null;
+  }
+
+  _append(node){
+    if (!this.next){
+      this.next = node;
+      node.prev = this;
+    } else {
+      this.next._append(node);
+    }
+    return this;
   }
 
   stackPush(value){
-    this._data.push(value);
+    this._append(new Stack(value));
   }
 
   stackPop(){
-    return this._data.pop();
+    if (!this.next){
+      if (!this.prev){
+        let value = this.value;
+        delete this.value;
+        delete this.prev;
+        delete this.next;
+        return value;
+      }
+      this.prev.next = null;
+      return this.value;
+    } else {
+      return this.next.stackPop();
+    }
   }
 }
 

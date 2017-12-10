@@ -1,16 +1,39 @@
 'use strict';
 
 class Queue{
-  constructor(){
-    this._data = [];
+  constructor(value){
+    this.value = value;
+    this.next = null;
+  }
+
+  _append(node){
+    if(!this.next){
+      this.next = node;
+    } else {
+      this.next._append(node);
+    }
+    return this;
+  }
+
+  _delete(){
+    if (this.next){
+      this.value = this.next.value;
+      this.next = this.next.next;
+    } else {
+      delete this.value;
+      delete this.next;
+    }
+    return this;
   }
 
   enqueue(value){
-    this._data.push(value);
+    this._append(new Queue(value));
   }
 
   dequeue(){
-    return this._data.shift();
+    let value = this.value;
+    this._delete();
+    return value;
   }
 }
 
