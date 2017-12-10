@@ -64,4 +64,14 @@ describe('linked-list.js', () => {
     result.append(testList);
     expect(result.getHead().next).toEqual(testList);
   });
+
+  test('getLength should return the length of the DoublyLinkedList', () => {
+    const result = new DoublyLinkedList(5);
+    const testList = new DoublyLinkedList(4);
+
+    expect(result.getLength()).toEqual(1);
+
+    result.append(testList);
+    expect(result.getLength()).toEqual(2);
+  });
 });

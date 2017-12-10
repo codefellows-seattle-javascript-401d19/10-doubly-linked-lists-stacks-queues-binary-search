@@ -66,6 +66,17 @@ class DoublyLinkedList {
   getHead() {
     return this;
   }
+
+  getLength() {
+    let current = this;
+    let count = 1;
+    while (current.next) {
+      current = current.next;
+      count++;
+    }
+
+    return count;
+  }
 }
 
 module.exports = DoublyLinkedList;
