@@ -15,7 +15,6 @@ const Stack = function() {
 
   this.pop = () => {
     let returnValue = null;
-    console.log(items);
 
     if (items) {
       returnValue = items.getTail();

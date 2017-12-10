@@ -16,6 +16,12 @@ describe('stack.js', () => {
     expect(TestStack.peek()).toEqual(30);
   });
 
+  test('pop should return null if no elements are in Stack', () => {
+    const TestStack = new Stack();
+
+    expect(TestStack.pop()).toEqual(null);
+  });
+
   test('getLength should return the proper length of the Stack', () => {
     const TestStack = new Stack();
 
