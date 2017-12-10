@@ -23,36 +23,40 @@ class DoublyLinkedList{
   }
 
   delete(node){
-    if(!(node instanceof DoublyLinkedList))
+    if(!(node instanceof DoublyLinkedList)){
       throw new TypeError('<node> should be an instance of DoublyLinkedList');
+    }
 
     if(node.value === this.value){
-      if (this.next){
-        this.value = this.next.value;
-        this.next = this.next.next;
-        if (this.next.next)
-          this.next.next.prev = this;
-      }
       if (!this.next){
         delete this.next;
         delete this.prev;
         delete this.value;
+        return this;
       }
+    }
+
+    if(this.prev === node){
+      this.prev = null;
       return this;
     }
 
-    if(!this.next)
+    if(!this.next){
       return this;
-    if(this.next === node){
-      if(this.next.next){
-        this.next.next.prev = this;
-        this.next = this.next.next;
-      } else {
-        this.next = null;
-      }
     } else {
-      this.next.delete(node);
+      if (this.next !== node){
+        return this.next.delete(node);
+      }
+      else {
+        if(this.next.next){
+          this.next.next.prev = this;
+          this.next = this.next.next;
+        } else {
+          this.next = null;
+        }
+      }
     }
+
     return this;
   }
 }
