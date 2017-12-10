@@ -46,6 +46,19 @@ class DoublyLinkedList {
     return this;
   }
 
+  insertBefore(node) {
+    isNode(node);
+
+    if(this.previous) {
+      node.previous = this.previous;
+      node.previous.next = node;
+    }
+
+    this.previous = node;
+    node.next = this;
+    return this;
+  }
+
 }
 
 

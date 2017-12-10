@@ -50,11 +50,43 @@ describe('doublyLinkedList.js', () => {
     head.insertAfter(firstLink);
     expect(head.next.value).toEqual(1);
     expect(firstLink.previous.value).toEqual(0);
+
+    firstLink.insertAfter(secondLink);
+    expect(firstLink.next.value).toEqual(2);
+    expect(secondLink.previous.previous.value).toEqual(0);
+  });
+
+  test('Calling insertBefore on a non-tail node should insert a new node immediately preceeding the calling node.', () => {
+    secondLink.prepend(head);
+    expect(secondLink.previous.value).toEqual(0);
+    expect(head.next).toEqual(secondLink);
+
+    secondLink.insertBefore(firstLink);
+    expect(firstLink.next).toEqual(secondLink);
+    expect(secondLink.previous.previous).toEqual(head);
+  });
+
+  test('Calling insertBefore on a head node should act the same way as prepending a node.', () => {
+    secondLink.insertBefore(head);
+    expect(head.next.value).toEqual(2);
+    expect(secondLink.previous.value).toEqual(0);
+
+    secondLink.insertBefore(firstLink);
+    expect(secondLink.previous.value).toEqual(1);
+    expect(secondLink.previous.previous.value).toEqual(0);
   });
 
   test('Calling any DoublyLinkedList method with an argument that isn\'t a proper node will throw an error.', () => {
     expect(() => {
       head.append({previous: null, value: 10, next: null});
+    }).toThrow();
+
+    expect(() => {
+      head.prepend({previous: null, value: 10, next: null});
+    }).toThrow();
+
+    expect(() => {
+      head.insertAfter({previous: null, value: 10, next: null});
     }).toThrow();
   });
 
