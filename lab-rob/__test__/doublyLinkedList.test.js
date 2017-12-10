@@ -17,6 +17,12 @@ describe('doublyLinkedList.js', () => {
       expect(head.value).toEqual(0);
       expect(head.next).toBeNull();
     });
+
+    test('Instantiating a new object without a value should throw an error.', () => {
+      expect(() => {
+        new DoublyLinkedList();
+      }).toThrow();
+    });
   });
 
   
@@ -125,6 +131,23 @@ describe('doublyLinkedList.js', () => {
       expect(filteredHead.value).toEqual(2);
       expect(filteredHead.next.value).toEqual(3);
       expect(filteredHead.next.next).toBeNull();
+    });
+
+    test('Calling filter where no elements pass the test should return an empty HEAD node', () => {
+      head.append(firstLink).append(secondLink).append(thirdLink);
+      let greaterThanFour = value => value > 4;
+      let filteredHead = head.filter(greaterThanFour);
+
+      expect(filteredHead).toEqual(new DoublyLinkedList(null));
+    });
+
+    test('Filter returns a DoublyLinkedList, so can be chained.', () => {
+      head.append(firstLink).append(secondLink).append(thirdLink);
+      let greaterThanZero = value => value > 0;
+      let isEven = value => value % 2 === 0;
+      let filteredHead = head.filter(greaterThanZero).filter(isEven);
+
+      expect(filteredHead).toEqual(new DoublyLinkedList(2));
     });
   });
 

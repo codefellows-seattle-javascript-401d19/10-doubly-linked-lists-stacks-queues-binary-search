@@ -2,6 +2,8 @@
 
 class DoublyLinkedList {
   constructor(value) {
+    if(value === undefined)
+      throw new TypeError('<value> must be defined');
     this.previous = null;
     this.value = value;
     this.next = null;
@@ -120,7 +122,7 @@ let isNode = node => {
 // head.append(new DoublyLinkedList(5));
 // head.append(new DoublyLinkedList(6));
 
-// let greaterThanOne = value => value > 1;
+// let greaterThanOne = value => value % 2 === 0;
 // let filteredHead = head.filter(greaterThanOne);
 
-// console.log(filteredHead);
+// console.log(filteredHead.filter(value => value % 3 === 0).append(new DoublyLinkedList('hi')));
