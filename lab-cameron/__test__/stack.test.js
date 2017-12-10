@@ -3,10 +3,17 @@
 const Stack = require('../model/stack');
 
 describe('stack.js', () => {
-  test.skip('push should add elements to the top of the Stack', () => {
+  test('push should add elements to the top of the Stack', () => {
     const TestStack = new Stack();
 
     TestStack.push(10);
+    expect(TestStack.peek()).toEqual(10);
+
+    TestStack.push(20);
+    expect(TestStack.peek()).toEqual(20);
+
+    TestStack.push(30);
+    expect(TestStack.peek()).toEqual(30);
   });
 
   test('getLength should return the proper length of the Stack', () => {
