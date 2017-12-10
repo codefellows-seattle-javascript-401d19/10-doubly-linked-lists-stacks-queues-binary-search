@@ -15,12 +15,10 @@ const binarySearch = (objArray, id) => {
     }
   });
 
-  const idArray = objArray.map(obj => obj.id);
-
   while (lowIndex <= highIndex){
 
     let middleIndex = Math.floor((lowIndex + highIndex) / 2);
-    let idFound = idArray[middleIndex];
+    let idFound = objArray[middleIndex].id;
 
     if (idFound < id){
       lowIndex = middleIndex + 1;
