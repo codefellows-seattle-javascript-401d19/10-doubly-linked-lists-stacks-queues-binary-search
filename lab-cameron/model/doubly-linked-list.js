@@ -31,6 +31,13 @@ class DoublyLinkedList {
       return null;
     }
 
+    if (this.prev === null && this.next !== null && node === this) {
+      const nextList = this.next;
+      this.next.prev = null;
+      this.next = null;
+      return nextList;
+    }
+
 
     if (this.value === node.value) {
       if (this.prev) {

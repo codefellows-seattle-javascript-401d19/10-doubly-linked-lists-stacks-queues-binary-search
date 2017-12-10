@@ -36,6 +36,9 @@ describe('linked-list.js', () => {
     expect(result.next.value).toEqual(4);
     expect(result.next.next).toEqual(null);
 
+    expect(result.remove(result)).toEqual(testList);
+
+    result.append(testList);
     expect(result.remove(testList)).toEqual(result);
     expect(result.remove(result)).toEqual(null);
   });
