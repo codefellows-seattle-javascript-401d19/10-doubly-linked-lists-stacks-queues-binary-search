@@ -78,6 +78,30 @@ class DoublyLinkedList {
     this.next.previous = this.previous;
     return this.previous;
   }
+
+  filter(fn) {
+    if(typeof fn !== 'function')
+      throw new TypeError('<fn> must be a function.');
+    
+    let checkingNode = this;
+    let newList = new DoublyLinkedList(null);
+    let keepGoing = true;
+
+    while(keepGoing) {
+      if(fn(checkingNode.value)) { //passes the test
+        if(!newList.value) { //first match
+          newList.value = checkingNode.value;
+        } else { //additional matches
+          newList.append(new DoublyLinkedList(checkingNode.value));
+        }
+      }
+      if(!checkingNode.next)
+        keepGoing = false;
+      checkingNode = checkingNode.next;
+    }
+    return newList;
+  }
+
 }
 
 
@@ -87,3 +111,16 @@ let isNode = node => {
   if(!(node instanceof DoublyLinkedList))
     throw new TypeError('<node> must be an instance of DoublyLinkedList');
 };
+
+// let head = new DoublyLinkedList(0);
+// head.append(new DoublyLinkedList(1));
+// head.append(new DoublyLinkedList(2));
+// head.append(new DoublyLinkedList(3));
+// head.append(new DoublyLinkedList(4));
+// head.append(new DoublyLinkedList(5));
+// head.append(new DoublyLinkedList(6));
+
+// let greaterThanOne = value => value > 1;
+// let filteredHead = head.filter(greaterThanOne);
+
+// console.log(filteredHead);

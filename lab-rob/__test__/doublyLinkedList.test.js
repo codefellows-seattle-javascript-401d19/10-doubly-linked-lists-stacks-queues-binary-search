@@ -114,11 +114,22 @@ describe('doublyLinkedList.js', () => {
     test('Calling remove on a head node with no trailing nodes should return the head node.', () => {
       expect(head.remove()).toEqual(head);
     });
-  
+  });
+
+  describe('filter()', () => {
+    test('Calling filter on a node should return a new linked list starting at the called node with the filtered values for itself and each subsequent node that pass the provided test.', () => {
+      head.append(firstLink).append(secondLink).append(thirdLink);
+      let greaterThanOne = value => value > 1;
+      let filteredHead = head.filter(greaterThanOne);
+
+      expect(filteredHead.value).toEqual(2);
+      expect(filteredHead.next.value).toEqual(3);
+      expect(filteredHead.next.next).toBeNull();
+    });
   });
 
   describe('error checking', () => {
-    test('Calling any DoublyLinkedList method with an argument that isn\'t a proper node will throw an error.', () => {
+    test('Calling append, prepend, insertAfter, or insertBefore with an argument that isn\'t a proper node will throw an error.', () => {
       expect(() => {
         head.append({previous: null, value: 10, next: null});
       }).toThrow();
@@ -133,6 +144,12 @@ describe('doublyLinkedList.js', () => {
   
       expect(() => {
         head.insertBefore({previous: null, value: 10, next: null});
+      }).toThrow();
+    });
+    
+    test('Calling filter without a callback function will throw an error.', () => {
+      expect(() => {
+        head.filter('notAFunction');
       }).toThrow();
     });
   });
