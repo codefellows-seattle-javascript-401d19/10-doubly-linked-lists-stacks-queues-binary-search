@@ -52,6 +52,7 @@ describe('linked-list.js', () => {
     result.append(testList);
     expect(result.getTail()).toEqual(testList);
     expect(result.remove(result.getTail())).toEqual(result);
+    expect(result.remove(result.getTail())).toEqual(null);
   });
 
   test('getHead should return the head of the DoublyLinkedList', () => {

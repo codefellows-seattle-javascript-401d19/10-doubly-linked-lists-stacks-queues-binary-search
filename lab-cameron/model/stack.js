@@ -15,13 +15,24 @@ const Stack = function() {
 
   this.pop = () => {
     let returnValue = null;
+    console.log(items);
+
+    if (items) {
+      returnValue = items.getTail();
+      items = items.remove(returnValue);
+    } else {
+      returnValue = null;
+    }
+
+    return returnValue;
+  };
+
+  this.peek = () => {
+    let returnValue = null;
 
     items ?
-      returnValue = items.remove(items.getTail()) :
+      returnValue = items.getTail().value :
       returnValue = null;
-
-    // update internal items state
-    items = items.remove(items.getTail());
 
     return returnValue;
   };

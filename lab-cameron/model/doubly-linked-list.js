@@ -69,8 +69,8 @@ class DoublyLinkedList {
 
   getLength() {
     let current = this;
-    let count = 1;
-    while (current.next) {
+    let count = 0;
+    while (current) {
       current = current.next;
       count++;
     }
