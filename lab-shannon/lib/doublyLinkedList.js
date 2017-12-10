@@ -47,6 +47,10 @@ class DoublyLinkedList{
       return this;
     }
 
+    if(this.next === undefined){
+      throw new Error(`The linked list does not exist. You must create one before removing a node`)
+    }
+
     if(this.next === null){
       throw new Error(`A node with that value does not exist`);
     }else{

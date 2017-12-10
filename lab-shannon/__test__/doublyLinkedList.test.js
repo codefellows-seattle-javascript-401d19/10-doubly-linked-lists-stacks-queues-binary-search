@@ -14,7 +14,7 @@ let singleList = new DoublyLinkedList(5);
 let emptyList;
 
 describe(`doublyLinkedList.js`, () => {
-  test(`The append method should add a node with .next pointing to null and .previous pointing to the previous node`, () => {
+  test(`The append method should add a node to the end of a doubly linked list with .next pointing to null and .previous pointing to the previous node`, () => {
 
     expect(longList.next.value).toEqual(2);
     expect(longList.previous).toEqual(null);
@@ -27,7 +27,7 @@ describe(`doublyLinkedList.js`, () => {
     expect(longList.next.next.previous.value).toEqual(2);
   })
 
-  test(`The append method should add a node with .next pointing to null and .previous pointing to the previous node`, () => {
+  test(`The append method should add a node to the end of a doubly linked list with .next pointing to null and .previous pointing to the previous node`, () => {
 
     expect(shortList.next.value).toEqual(11);
     expect(shortList.previous).toEqual(null);
