@@ -133,7 +133,7 @@ describe('doublyLinkedList.js', () => {
       expect(filteredHead.next.next).toBeNull();
     });
 
-    test('Calling filter where no elements pass the test should return an empty HEAD node', () => {
+    test('Calling filter where no elements pass the test should return an empty HEAD node.', () => {
       head.append(firstLink).append(secondLink).append(thirdLink);
       let greaterThanFour = value => value > 4;
       let filteredHead = head.filter(greaterThanFour);

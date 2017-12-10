@@ -113,16 +113,3 @@ let isNode = node => {
   if(!(node instanceof DoublyLinkedList))
     throw new TypeError('<node> must be an instance of DoublyLinkedList');
 };
-
-// let head = new DoublyLinkedList(0);
-// head.append(new DoublyLinkedList(1));
-// head.append(new DoublyLinkedList(2));
-// head.append(new DoublyLinkedList(3));
-// head.append(new DoublyLinkedList(4));
-// head.append(new DoublyLinkedList(5));
-// head.append(new DoublyLinkedList(6));
-
-// let greaterThanOne = value => value % 2 === 0;
-// let filteredHead = head.filter(greaterThanOne);
-
-// console.log(filteredHead.filter(value => value % 3 === 0).append(new DoublyLinkedList('hi')));
