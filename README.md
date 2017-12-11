@@ -1,63 +1,34 @@
 ![cf](https://i.imgur.com/7v5ASc8.png) Lab 10: Doubly Linked List, Binary Search, Stacks, and Queues.
-======
 
-## Submission Instructions
-* Work in a fork of this repository
-* Work in a branch on your fork
-* Write all of your code in a directory named `lab-` + `<your name>` **e.g.** `lab-susan`
-* Open a pull request to this repository
-* Submit on canvas a question and observation, how long you spent, and a link to your pull request
+## Features
 
-## Configuration 
-Configure the root of your repository with the following files and directories. Thoughtfully name and organize any additional configuration or module files.
-* **README.md** - contains documentation
-* **.gitignore** - contains a [robust](http://gitignore.io) `.gitignore` file 
-* **.eslintrc.json** - contains the course linter configuration
-* **.eslintignore** - contains the course linter ignore configuration
-* **package.json** - contains npm package config
-* **model/** - contains module definitions
-* **\_\_test\_\_/** - contains test modules
+  * **Doubly Linked List module**
 
-## Feature Tasks  
-### Doubly Linked List
-__Start with the `DoublyLinkedLinked` class created during class.__
-* Add a `remove` method that removes a Node from a doubly linked list by reference
-* Add a method of your choice to the constructor (use array methods for inspiration)
+    Doubly Linked List class has a constructor function that creates new nodes. Every node has value, previous and next property. Also DLL class has two methods used to `append` and `remove` nodes from doubly linked list.
+    * `append`
 
-##### Tests
-Unit test each method of your constructor. Consider 2 regular cases (one simple and one complex) and 2 edge cases. 
+      * if new Node is not an instance of DLL class - TypeError will be thrown.
+      * To find last node in the list, we check if there is no `node.next` property.
 
-### Stack or Queue
-Implement a Stack or a Queue using (internally) a Linked List.
-* Implement the push/pop or dequeue/enqueue methods respectively.
+    * `remove`
 
-##### Tests
-Unit test each method of your constructor. Consider 2 regular cases (one simple and one complex) and 2 edge cases. 
+      * if new Node is not an instance of DLL class - TypeError will be thrown.
+      * if first node is the one to remove. We set `this.next.previous = null` and we return next node which will be first node in our new list.
+      * if there is only one node in the list that node will get removed.
 
-### Binary Search
-Implement a version of binary search that works with an array of objects instead of an array of numbers:
+    * `find`
 
-```javascript
-let sampleArray = [
-  {id: 10, name = 'Demi'},
-  {id: 20, name = 'Sir Gregor'},
-  {id: 30, name = 'The Hound'},
-]
-
-let binarySearch = (sortedObjectArray,id){
-
-};
-
-//Sample call
-binarySearch(sampleArray,30);
-```
-
-##### Tests
-Unit test the new version of binary search considering at least 2 regular cases and 2 edge cases.
-
-## Documentation
-In your README.md describe the exported values of each module you have defined. Every function description should include it's arity (expected number of parameters), the expected data for each parameter (data-type and limitations), and it's behavior (for both valid and invalid use). Feel free to write any additional information in your README.md.
+      * if node that we're looking for is the current node's value - we found our node.
+      * if current node is not the one we're looking for we will perform `find` function and compare it's value on the next node.
 
 
-## Bonus (2 Points)
-Implement and test the Data Structure you didn't implement for the  "Stacks or Queue" section of the lab.
+  * **Binary Search module**
+    takes two arguments `sortedArray` - presorted array that we're using to look for an element and `id` - integer. Module checks if id property is a integer and if array is an array. If those conditions are true, module compares elements ids with entered id parameter and returns matching element. If there's no match, module will return -1.
+
+  * **Queue**
+
+    Queue class has a constructor function that creates new dll nodes. Every node has value, previous and next property. In addition to `append` and `remove` methods we have `enqueue` and `dequeue` that are adding new dll note to the end of the list and taking out first added node following FIFO principle.
+
+
+## Licence
+MIT © Pedja Josifovic
