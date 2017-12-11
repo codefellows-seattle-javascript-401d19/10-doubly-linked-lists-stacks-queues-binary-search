@@ -48,4 +48,21 @@ describe('queue.js', () => {
     TestQueue.enqueue(20);
     expect(TestQueue.front()).toEqual(10);
   });
+
+  test('enqueue and dequeue should change the front of the queue in a FIFO manner', () => {
+    const TestQueue = new Queue();
+
+    TestQueue.enqueue(10);
+    expect(TestQueue.front()).toEqual(10);
+
+    TestQueue.enqueue(20);
+    TestQueue.enqueue(30);
+    TestQueue.dequeue();
+    expect(TestQueue.front()).toEqual(20);
+
+    expect(TestQueue.dequeue().value).toEqual(20);
+    expect(TestQueue.dequeue().value).toEqual(30);
+    expect(TestQueue.dequeue()).toEqual(null);
+
+  });
 });

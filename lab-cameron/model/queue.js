@@ -21,8 +21,6 @@ const Queue = function() {
       items = items.remove(returnValue);
     }
 
-    console.log(items);
-
     return returnValue;
   };
 
