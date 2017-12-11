@@ -142,7 +142,7 @@ class Queue {
 		return this.linkedQueue.head.value;
 	}
 
-	get listLength() {
+	get	listLength() {
 		return this.linkedQueue.listLength;
 	}
 
@@ -152,40 +152,3 @@ class Queue {
 }
 
 module.exports = Queue;
-
-// var queue = new Queue();
-
-
-// console.log('-----Before enqueue...------')
-// queue.displayQueueObj(console.log);
-// console.log(util.inspect(queue, false, null))
-// queue.enqueue('foo');
-// queue.enqueue('bar');
-// queue.enqueue('baz');
-// console.log('-----After first enqueue...------')
-// queue.displayQueueObj(console.log);
-// console.log(util.inspect(queue, false, null))
-// // console.log(queue.peek());
-// queue.enqueue('kush');
-// console.log('-----After second enqueue...------')
-// queue.displayQueueObj(console.log);
-// console.log(util.inspect(queue, false, null))
-// queue.dequeue();
-// console.log('-----After dequeue...------')
-// queue.displayQueueObj(console.log);
-// console.log(util.inspect(queue, false, null))
-// console.log('-----After one last enqueue...------')
-// queue.enqueue('brash');
-// queue.displayQueueObj(console.log);
-// queue.dequeue();
-// console.log('Shoulda dequeued.');
-// queue.dequeue();
-// console.log('Shoulda dequeued.');
-// queue.dequeue();
-// console.log('Shoulda dequeued.');
-// queue.dequeue();
-// console.log('Shoulda dequeued.');
-// queue.dequeue();
-// console.log(util.inspect(queue, false, null))
-
-
