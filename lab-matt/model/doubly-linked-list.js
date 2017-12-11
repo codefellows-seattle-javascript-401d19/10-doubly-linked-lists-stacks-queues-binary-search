@@ -12,7 +12,6 @@ class LinkedList{
     if (!(node instanceof LinkedList))
       throw new TypeError('<node> should be an instance of LinkedList');
     
-    // mattL - we know this is the last element if there is no next (null)
     if (!this.next) {
       this.next = node;
       this.next.previous = this;
@@ -27,23 +26,34 @@ class LinkedList{
     if (!(node instanceof LinkedList))
       throw new TypeError('<node> should be an instance of LinkedList');
 
-    if (this.next.next === null && this.next === node)
-
-      return this.next = null;
-
-    if (this.next === node) {
-      this.next.next.previous = this;
-      return this.next = this.next.next;
-    } else {
-      return this.next.remove(node);
+    if (!this.previous && this.value === node.value) {
+      if (!this.next) {
+        console.log('Removal of only node: Setting value to null');
+        this.value = null;
+        return;
+      }
+      this.value = this.next.value;
+      this.next = this.next.next;
+      return;
     }
 
+    if (this.next === node) {
+      if (!this.next.next) {
+        this.next = null;
+        return;
+      } else {
+        this.next.next.previous = this;
+        this.next = this.next.next;
+        return;
+      }
+    } else {  
+      return this.next.remove(node);
+    }
   }
 
   find(node, num) {
     let counter = num + 1 || 1;
 
-    // mattL - if searching by linkedlist value
     if (!(node instanceof LinkedList)) {
       if (this.value === node)
         return this;
@@ -53,7 +63,6 @@ class LinkedList{
   
       return this.next.find(node, counter);
       
-    // mattL - if searching by linkedlist object    
     } else {
       if (this === node)
         return this;
