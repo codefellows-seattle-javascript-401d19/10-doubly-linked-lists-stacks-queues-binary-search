@@ -151,7 +151,9 @@ class Queue {
 	}
 }
 
-var queue = new Queue();
+module.exports = Queue;
+
+// var queue = new Queue();
 
 
 // console.log('-----Before enqueue...------')
