@@ -236,3 +236,51 @@ run `npm test` to check tests.
 1. If the last node is popped, pop should return the node value and then set the value to undefined.
 1. If there are no nodes in the stack, pop should return undefined.
 1. push and pop should increment/decrement a counter each time it is used, but the counter should never drop below zero.
+
+
+
+# binary-search-objects.js
+
+## Code Samples
+Start with an array of objects sorted sequentially by numeric id.
+
+```
+let sampleArray = [
+      { id: 10, name: 'Demi' },
+      { id: 20, name: 'Sir Gregor' },
+      { id: 30, name: 'The Hound' },
+      { id: 40, name: 'Gary' },
+      { id: 50, name: 'Charlotte' },
+      { id: 60, name: 'Stella' },
+      { id: 70, name: 'Oliver' },
+      { id: 80, name: 'Theodore' },
+      { id: 90, name: 'Gizmo' },
+      { id: 100, name: 'Chewie' },
+      { id: 110, name: 'Kibo' },
+    ];
+```
+
+Return a single element of the array, requesting it by id.
+
+```
+console.log(binarySearchObjects(sampleArray, 60));
+  // { id: 60, name: 'Stella' }
+```
+
+If an array is not given as the first argument an error will be thrown.
+
+If an element is checked and doesn't have an id, an error will be thrown.
+
+If no element with the given id is found, an error will be thrown.
+
+**NOTE:** This function will return incorrect results if an unsorted array is used. Object ids must be numeric values.
+  
+
+## Tests
+
+run `npm test` to check tests.
+
+1. binarySearchObjects should return the object with the given id.
+1. binarySearchObjects should throw an error if an array is not given as the first argument.
+1. binarySearchObjects should throw an error if an element that is checked is missing it's id property.
+1. binarySearchObjects should throw an error if the object with the given id is not found.
