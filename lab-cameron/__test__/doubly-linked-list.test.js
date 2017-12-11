@@ -52,6 +52,15 @@ describe('linked-list.js', () => {
     expect(result.remove(result)).toEqual(null);
   });
 
+  test('Should throw an error if list is appended with non-node', () => {
+    const result = new DoublyLinkedList(5);
+    const testList = 'not a node';
+
+    expect(() => {
+      result.remove(testList);
+    }).toThrow();
+  });
+
   test('getTail should return the DoublyLinkedLists tail node', () => {
     const result = new DoublyLinkedList(5);
     const testList = new DoublyLinkedList(4);
