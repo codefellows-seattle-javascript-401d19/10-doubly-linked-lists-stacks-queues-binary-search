@@ -44,7 +44,7 @@ describe('doubly-linked-lists.js', () => {
     expect(result.next.next.next).toEqual(null);  
   });
 
-  test(`new method test`, () => {
+  test(`new method test should do something`, () => {
     let result = new DoublyLinkedList(7);
     result.append(new DoublyLinkedList(9));
     result.append(new DoublyLinkedList(11));

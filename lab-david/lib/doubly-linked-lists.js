@@ -31,7 +31,15 @@ class DoublyLinkedLists{
       this.value === this.next.next.value;
   }
 
-  // TODO : add a method of our choice to the constructor
+  // find a value from a list of nodes
+  find(node, value){
+    if(!(node instanceof DoublyLinkedLists))
+      throw new TypeError(`<node> should be an instance of DoublyLinkedLists`);
+    
+    if(this.value === node.value)
+      return this.node;
+  }
+
 }
 
 module.exports = DoublyLinkedLists;
