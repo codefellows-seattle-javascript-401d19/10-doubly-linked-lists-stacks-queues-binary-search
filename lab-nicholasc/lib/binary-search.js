@@ -12,13 +12,16 @@ let binarySearch = (sortedArray, itemToFind) => {
     let middleIndex = Math.floor((lowIndex+highIndex) /2);
     let elementFound = sortedArray[middleIndex];
 
-    if(elementFound.id < itemToFind){
+    if(elementFound < itemToFind){
       lowIndex=middleIndex+1;
-    }else if(elementFound.id > itemToFind){
+    }else if(elementFound > itemToFind){
       highIndex=middleIndex-1;
-    }else{ 
+    }else{
       console.log(elementFound);
-      return middleIndex;
+      return {
+        steps : steps,
+        value : sortedArray[middleIndex],
+      };
     }
   }
   return -1;
