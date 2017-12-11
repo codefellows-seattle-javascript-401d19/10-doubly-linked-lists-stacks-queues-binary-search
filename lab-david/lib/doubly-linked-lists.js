@@ -27,8 +27,8 @@ class DoublyLinkedLists{
       throw new TypeError(`<node> should be an instance of DoublyLinkedLists`);
     
     if(this.value === node.value)
-      this.next.previous = null;
-
+      this.value.next.previous = null;
+      this.value === this.next.next.value;
   }
 
   // TODO : add a method of our choice to the constructor

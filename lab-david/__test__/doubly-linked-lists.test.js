@@ -26,4 +26,39 @@ describe('linked-lists.js', () => {
 
     expect(result.next.next.next).toEqual(null);    
   });
+
+  test('remove should remove the node by reference value ', () => {
+    let result = new DoublyLinkedList(7);
+    result.append(new DoublyLinkedList(9));
+    result.append(new DoublyLinkedList(11));
+    
+    expect(result.value).toEqual(7);
+    expect(result.previous).toEqual(null);
+
+    expect(result.next.value).toEqual(9);
+    expect(result.next.previous).toEqual(7);
+
+    expect(result.next.next.value).toEqual(11);
+    expect(result.next.previous.previous).toEqual(7);
+
+    expect(result.next.next.next).toEqual(null);  
+  });
+
+  test(`new method test`, () => {
+    let result = new DoublyLinkedList(7);
+    result.append(new DoublyLinkedList(9));
+    result.append(new DoublyLinkedList(11));
+    
+    expect(result.value).toEqual(7);
+    expect(result.previous).toEqual(null);
+
+    expect(result.next.value).toEqual(9);
+    expect(result.next.previous).toEqual(7);
+
+    expect(result.next.next.value).toEqual(11);
+    expect(result.next.previous.previous).toEqual(7);
+
+    expect(result.next.next.next).toEqual(null);  
+  });
+
 });
