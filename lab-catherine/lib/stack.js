@@ -1,12 +1,10 @@
 'use strict';
-
 class StackLinkedList {
   constructor(value) {
     this.value = value;
     this.next = null;
     this.previous = null;
   }
-
 
   append(node){
     if(!(node instanceof StackLinkedList))
@@ -28,6 +26,9 @@ class StackLinkedList {
   }
 
   pop() {
+    if(this.value === '') {
+      throw new TypeError('<node> must contain a value');
+    }
     if(!this.next) {
       if(this.previous) {
         this.previous.next = null;
