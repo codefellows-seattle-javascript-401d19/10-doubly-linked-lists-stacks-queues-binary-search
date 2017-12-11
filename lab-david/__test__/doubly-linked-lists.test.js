@@ -44,6 +44,13 @@ describe('doubly-linked-lists.js', () => {
     expect(result.next.next.next).toEqual(null);  
   });
 
+  test('testing to remove the first and only node ', () => {
+    let result = new DoublyLinkedList(7);
+    result = result.remove(result);
+    expect(result).toBeNull();
+    
+  });
+
   test(`find method should find a certain node based on a value given`, () => {
     let result = new DoublyLinkedList(7);
     result.append(new DoublyLinkedList(9));
