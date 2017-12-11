@@ -16,4 +16,10 @@ describe('binary-search.js', () => {
   test('If there is no corresponding id, -1 will be returned', () => {
     expect(binarySearch(sampleArray, 4)).toEqual(-1);
   });
+
+  test('The argument passed in must be an array', () => {
+    expect(() => 
+      binarySearch ('Not an array', 2)
+    ).toThrow();
+  });
 });
