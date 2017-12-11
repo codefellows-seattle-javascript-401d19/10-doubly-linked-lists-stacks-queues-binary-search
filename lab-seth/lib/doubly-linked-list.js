@@ -9,6 +9,7 @@ class ListNode{
   }
 
   append(node){// the node you are appending to is this (EG result)
+
     if(!(node instanceof ListNode))
       throw new TypeError('<node> should be an instance of ListNode');
     
@@ -17,23 +18,33 @@ class ListNode{
       this.next = node;
       node.previous = this;
     }
-    else
+    else{
       this.next.append(node);// RECURSIVE!
-    
+    }
     return this;
   }
   //TODO: Add a method to remove a node and properly keep the list linked
   remove(node){
+    console.log(this);
+    console.log(node);
     if (!(node instanceof ListNode))
       throw new TypeError('<node> should be an instance of ListNode');
 
     if(!this.next){
-      node.previous = node;
-      this.next = null;
+      throw new TypeError('<node> should be and instance of linked list, cannot remove a single node from no list');
     }
+    if (this.next === node) {
+      //vinicio - here we know we need to remove the NEXT node
+      this.next.next.previous = this;
+      this.next = this.next.next;
+    } else {
+      this.next.remove(node);
+    }
+    return this;
+
   }
 
-//TODO: Add a 4RD method of choice (refer to array methods)
+//TODO: Add a 3RD method of choice (refer to array methods)
 
 
 }

@@ -44,10 +44,30 @@ describe('linked-list.js',() => {
       result.append(new ListNode(4));
       result.append(new ListNode(10));
 
+      expect(result.value).toEqual(5);
+      expect(result.next.value).toEqual(4);
+      expect(result.next.next.value).toEqual(10);      
+
       result.remove(result.next);
 
       expect(result.next.value).toEqual(10);
-      expect(result.next.next.value).toEqual(null);
+      expect(result.next.previous.value).toEqual(5);
+
+    });
+
+    test('removing last node should properly modify the next nodes previous property', () => {
+      let result = new ListNode(5);
+      result.append(new ListNode(4));
+      result.append(new ListNode(10));
+
+      expect(result.value).toEqual(5);
+      expect(result.next.value).toEqual(4);
+      expect(result.next.next.value).toEqual(10);      
+
+      result.remove(result.next.next);
+
+      expect(result.next.value).toEqual(null);
+      expect(result.next.previous.value).toEqual(10);
 
     });
   });
