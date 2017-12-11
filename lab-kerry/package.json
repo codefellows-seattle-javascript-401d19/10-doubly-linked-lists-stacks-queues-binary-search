@@ -1,0 +1,31 @@
+{
+  "name": "10-doubly-linked-lists-stacks-queues-binary-search",
+  "version": "1.0.0",
+  "description": "Doubly Linked List, Stack/Queue, Binary Search lab",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest -i --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kerrynordstrom/10-doubly-linked-lists-stacks-queues-binary-search.git"
+  },
+  "keywords": [
+    "Linked-List",
+    "Doubly-Linked-List",
+    "Stack",
+    "Queue",
+    "Binary-Search"
+  ],
+  "author": "Kerry Nordstrom",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kerrynordstrom/10-doubly-linked-lists-stacks-queues-binary-search/issues"
+  },
+  "homepage": "https://github.com/kerrynordstrom/10-doubly-linked-lists-stacks-queues-binary-search#readme",
+  "devDependencies": {
+    "eslint": "^4.13.0",
+    "jest": "^21.2.1",
+    "util": "^0.10.3"
+  }
+}
