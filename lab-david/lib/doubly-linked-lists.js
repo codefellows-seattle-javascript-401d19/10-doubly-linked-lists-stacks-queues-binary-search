@@ -22,7 +22,7 @@ class DoublyLinkedLists{
   }
 
   // TODO : add remove method that removes a node from the DLL by reference
-  remove(node, value){
+  remove(node){
     if(!(node instanceof DoublyLinkedLists))
       throw new TypeError(`<node> should be an instance of DoublyLinkedLists`);
     
@@ -36,7 +36,7 @@ class DoublyLinkedLists{
   }
 
   // find a value from a list of nodes
-  find(node, value){
+  find(node){
     if(!(node instanceof DoublyLinkedLists))
       throw new TypeError(`<node> should be an instance of DoublyLinkedLists`);
     
