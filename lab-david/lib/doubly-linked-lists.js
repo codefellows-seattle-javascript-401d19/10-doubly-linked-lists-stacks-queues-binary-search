@@ -27,8 +27,12 @@ class DoublyLinkedLists{
       throw new TypeError(`<node> should be an instance of DoublyLinkedLists`);
     
     if(this.value === node.value)
-      this.next.previous = null;
-    return this.next.node;
+      if(this.next){
+        this.next.previous = null;
+        return this.next.node;        
+      } else {
+        return null;
+      }
   }
 
   // find a value from a list of nodes
