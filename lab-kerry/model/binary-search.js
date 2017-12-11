@@ -1,4 +1,5 @@
 'use strict';
+
 let sampleArray = [
 	{ id: 1, name: 'Demi' },
 	{ id: 2, name: 'Sir Gregor' },
@@ -19,6 +20,7 @@ let sampleArray = [
 
 let binarySearch = (sortedObjectArray, id) => {
 
+
 	let lowIndex = 0;
 	let highIndex = sortedObjectArray.length - 1;
 	//--------------------------------------------
@@ -34,17 +36,20 @@ let binarySearch = (sortedObjectArray, id) => {
 		let elementName = sortedObjectArray[middleIndex].name;
 		//--------------------------------------------
 
+		if (sortedObjectArray[middleIndex] === -1) {
+			throw new TypeError('Please enter a valid id');
+		}
 		if (elementFound < id) {
 			lowIndex = middleIndex + 1;
 		} else if (elementFound > id) {
 			highIndex = middleIndex - 1;
 		} else {
-			return middleIndex
+			return sortedObjectArray[middleIndex];
 		}
 	}
 	return -1;
 };
 
-binarySearch(sampleArray, 14);
+console.log(binarySearch(sampleArray, 14));
 
 module.exports = binarySearch;

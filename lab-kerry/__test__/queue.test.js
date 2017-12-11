@@ -53,4 +53,13 @@ test('REMOVE ALL - A queue should remove all nodes, abiding by the LIFO prinicip
 	expect(queue.linkedQueue.nodeCount).toEqual(0);
 });
 
+test('PEEK - This function should show the top element in a queue', () => {
+	let queue = new Queue();
+	queue.enqueue('foo');
+	queue.enqueue('bar');
+	queue.enqueue('baz');
+	queue.peek();
+	expect(queue.linkedQueue.head.value).toEqual('foo');
+});
+
 

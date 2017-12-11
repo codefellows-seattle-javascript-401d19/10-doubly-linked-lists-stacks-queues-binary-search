@@ -53,4 +53,13 @@ describe('stack.js', () => {
 		expect(stack.linkedStack.nodeCount).toEqual(0);
 	});
 
+	test('PEEK - This function should show the top element in a stack', () => {
+		let stack = new Stack();
+		stack.push('foo');
+		stack.push('bar');
+		stack.push('baz');
+		stack.peek();
+		expect(stack.linkedStack.head.value).toEqual('baz');
+	});
+
 

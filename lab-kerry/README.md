@@ -1,63 +1,38 @@
-![cf](https://i.imgur.com/7v5ASc8.png) Lab 10: Doubly Linked List, Binary Search, Stacks, and Queues.
-======
+# Lab 10: Doubly Linked List, Binary Search, Stacks, and Queues.
 
-## Submission Instructions
-* Work in a fork of this repository
-* Work in a branch on your fork
-* Write all of your code in a directory named `lab-` + `<your name>` **e.g.** `lab-susan`
-* Open a pull request to this repository
-* Submit on canvas a question and observation, how long you spent, and a link to your pull request
+## Technologies Used
+-Node.js (ES6 notation where possible)
+-Development NPM packages (eslint, jest, and util)
 
-## Configuration 
-Configure the root of your repository with the following files and directories. Thoughtfully name and organize any additional configuration or module files.
-* **README.md** - contains documentation
-* **.gitignore** - contains a [robust](http://gitignore.io) `.gitignore` file 
-* **.eslintrc.json** - contains the course linter configuration
-* **.eslintignore** - contains the course linter ignore configuration
-* **package.json** - contains npm package config
-* **model/** - contains module definitions
-* **\_\_test\_\_/** - contains test modules
+## How to Use
 
-## Feature Tasks  
-### Doubly Linked List
-__Start with the `DoublyLinkedLinked` class created during class.__
-* Add a `remove` method that removes a Node from a doubly linked list by reference
-* Add a method of your choice to the constructor (use array methods for inspiration)
+To start this app, clone this repo from 
 
-##### Tests
-Unit test each method of your constructor. Consider 2 regular cases (one simple and one complex) and 2 edge cases. 
+  `http://www.github.com/kerrynordstrom/08-09-vanilla-rest-server`
 
-### Stack or Queue
-Implement a Stack or a Queue using (internally) a Linked List.
-* Implement the push/pop or dequeue/enqueue methods respectively.
+install all necessary packages with 
 
-##### Tests
-Unit test each method of your constructor. Consider 2 regular cases (one simple and one complex) and 2 edge cases. 
+  `npm install`
 
-### Binary Search
-Implement a version of binary search that works with an array of objects instead of an array of numbers:
+  This project is able to start your node server upon running any tests.  To do this, type
 
-```javascript
-let sampleArray = [
-  {id: 10, name = 'Demi'},
-  {id: 20, name = 'Sir Gregor'},
-  {id: 30, name = 'The Hound'},
-]
+  `node run test`
 
-let binarySearch = (sortedObjectArray,id){
+## Modules
 
-};
+### Doubly Linked List Module 
+The doubly linked list module is a demonstration of a doubly linked list.  It can take any values of any data type.
 
-//Sample call
-binarySearch(sampleArray,30);
-```
+### Stack Module
+The stack module is a demonstration of a stack using a singly linked list as a construct.  Both the LinkedList and Stack constructors use  methods to add a node as the first in a list , last in a list, and remove from the same locations.  These methods abide by the LIFO principle inherent in a call stack by utilzing push/pop methodology.
 
-##### Tests
-Unit test the new version of binary search considering at least 2 regular cases and 2 edge cases.
-
-## Documentation
-In your README.md describe the exported values of each module you have defined. Every function description should include it's arity (expected number of parameters), the expected data for each parameter (data-type and limitations), and it's behavior (for both valid and invalid use). Feel free to write any additional information in your README.md.
+Additinally, helper methods are used to see the head node in the list as well as the linked list length and to display the entire object upon request.
 
 
-## Bonus (2 Points)
-Implement and test the Data Structure you didn't implement for the  "Stacks or Queue" section of the lab.
+### Queue Module
+The queue module is a demonstration of a queue using a singly linked list as a construct.  Both the LinkedList and Queue constructors use  methods to add a node as the first in a list, last in a list, and remove from the same locations.  These methods abide by the FIFO principle inherent in a request queue by utilzing enqueue/dequeue methodology.
+
+Additinally, helper methods are used to see the head node in the list as well as the linked list length and to display the entire object upon request.
+
+### Binary Search Module
+The binary search module is a demonstration of a common binary search as it specifically relates to iterating over an array of objects.  As the array is ordered by id properties, a valid input of an id will achieve a big O(logn) upon traversing the array by halving each traverse from the previous attempt.
