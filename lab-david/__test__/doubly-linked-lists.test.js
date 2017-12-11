@@ -44,21 +44,14 @@ describe('doubly-linked-lists.js', () => {
     expect(result.next.next.next).toEqual(null);  
   });
 
-  test(`new method test should do something`, () => {
+  test(`find method should find a certain node based on a value given`, () => {
     let result = new DoublyLinkedList(7);
     result.append(new DoublyLinkedList(9));
     result.append(new DoublyLinkedList(11));
     
     expect(result.value).toEqual(7);
-    expect(result.previous).toEqual(null);
-
     expect(result.next.value).toEqual(9);
-    expect(result.next.previous).toEqual(7);
-
     expect(result.next.next.value).toEqual(11);
-    expect(result.next.previous.previous).toEqual(7);
-
-    expect(result.next.next.next).toEqual(null);  
   });
 
 });
