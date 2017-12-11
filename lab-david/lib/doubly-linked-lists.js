@@ -4,7 +4,7 @@ class DoublyLinkedLists{
   constructor(value){
     this.value = value;
     this.next = next;
-    this.previous = previous;
+    // this.previous = previous;
   }
 
   append(node){
