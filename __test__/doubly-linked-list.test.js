@@ -25,6 +25,20 @@ describe('doubly-linked-list.js',() => {
     expect(list.next.next.next).toEqual(null);
   });
 
+  test('preappend should properly modify the previous property', () => {
+    let list = new DoublyLinkedList(5);
+    list.append(new DoublyLinkedList(4));
+    list.append(new DoublyLinkedList(10));
+    list.preappend(new DoublyLinkedList(3));
+
+    expect(list.previous.value).toEqual(3);
+    expect(list.next.value).toEqual(4);
+    expect(list.next.previous.value).toEqual(5);
+    expect(list.next.next.value).toEqual(10);
+    expect(list.next.next.previous.value).toEqual(4);
+    expect(list.next.next.next).toEqual(null);
+  });
+
   test('remove should remove a node from a doubly linked list', () => {
     let list = new DoublyLinkedList(5);
     let one = new DoublyLinkedList(6);
@@ -81,7 +95,7 @@ describe('doubly-linked-list.js',() => {
     expect(list.next.next.previous.value).toEqual(6);
     expect(list.next.next.next).toEqual(null);
   });
-  
+
   test('remove should return null when a node is not found', () => {
     let list = new DoublyLinkedList(5);
     let one = new DoublyLinkedList(6);
