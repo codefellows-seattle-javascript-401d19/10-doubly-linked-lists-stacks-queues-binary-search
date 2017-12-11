@@ -55,7 +55,7 @@ class DoubleLinkedListModule{
     let ctr = 0;  
     while (this.next !== null) {
       ctr++;
-      this.next = this.next.next; 
+      node = this.next; 
     }
     return ctr; 
   }
