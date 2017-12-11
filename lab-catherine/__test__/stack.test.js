@@ -15,6 +15,18 @@ describe('stack.js', () => {
     expect(stack.pop()).toEqual(undefined);
   });
 
+  test('If the numbers passed in are reversed, the stack should function properly', () => {
+    let stack = new StackLinkedList(3);
+
+    stack.push(2);
+    stack.push(1);
+
+    expect(stack.pop()).toEqual(1);
+    expect(stack.pop()).toEqual(2);
+    expect(stack.pop()).toEqual(3);
+    expect(stack.pop()).toEqual(undefined);
+  });
+
   test('Stack should have LIFO behavior when passed a string', () => {
     let stack = new StackLinkedList('c');
 
