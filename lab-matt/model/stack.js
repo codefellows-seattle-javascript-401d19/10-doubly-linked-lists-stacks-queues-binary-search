@@ -17,10 +17,9 @@ class Stack {
   }
 
   pop() {
-    let toPop;
-
+    let toPop = this.value;
+    
     if (!this.next) {
-      toPop = this.value;
       this.value = null;
       return toPop;
     } 
@@ -28,10 +27,10 @@ class Stack {
     if (!this.next.next) {
       toPop = this.next.value;      
       this.next = null;
-      return 'hello?';
+      return toPop;
     }
 
-    this.next.pop();
+    return this.next.pop();
   }
 }
 

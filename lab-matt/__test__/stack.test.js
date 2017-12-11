@@ -7,17 +7,16 @@ describe('stack.js', () => {
     let stack = new Stack(10);
     stack.push(new Stack(20));
     stack.push(new Stack(30));
+    stack.push(new Stack(40));
+    stack.push(new Stack(50));
+    stack.push(new Stack(60));
 
-    stack.pop();
-    expect(stack.value).toEqual(10);
-    expect(stack.next.value).toEqual(20);
-    expect(stack.next.next).toBeNull();
 
-    stack.pop();
-    expect(stack.value).toEqual(10);
-    expect(stack.next).toBeNull();
-    
-    stack.pop();
-    expect(stack.value).toBeNull();
+    expect(stack.pop()).toEqual(60);
+    expect(stack.pop()).toEqual(50);
+    expect(stack.pop()).toEqual(40);
+    expect(stack.pop()).toEqual(30);
+    expect(stack.pop()).toEqual(20);
+    expect(stack.pop()).toEqual(10);
   });
 });
