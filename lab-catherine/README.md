@@ -8,35 +8,27 @@
 
 ### Motivation
 
-In this project, I built a Doubly Linked List containing append, remove, and find methods. I then applied those concepts to construct a stack using Doubly Linked Lists. As well as created a binary search module.
+In this project, I built a Doubly Linked List module containing append, remove, and find methods. I then applied those concepts to construct a stack data structure model using Doubly Linked Lists. This project also includes a binary search module that accepts an array of objects and an item to find as its parameters.
 
 ### Build
 
 #### Doubly Linked List Module
 
-The storage module requires in logger and fsExtra and exports the storage module. The storage module has the following methods attached: ```fetchAll```, ```fetchItem```, ```addItem``` and ```deleteItem```. 
-* The ```storage.fetchAll``` method serves to retrieve all books.
-* The ```storage.fetchItem``` method accepts the parameter ( id ) and sets up functionality to retrieve one book if a user sends a request for that specific book's id.
-* The ```storage.addItem``` method accepts the parameter ( book ) and sets up functionality for posting a book.
-* The ```storage.deleteItem``` method accepts the parameter ( id ) and sets up functionality to delete one book if a user specifies that book's id.
-
-The storage module also includes a function ```fsExtra.pathExists``` that writes to the db.json file.
+The Doubly Linked List module contains a class called DoublyLinkedList that is being exported from the module. This class contains an append method that accepts a node as a parameter and adds it to the end of the doubly linked list. The class also contains a remove method that removes a node from the linked list. Finally, I included a find method that accepts a value and searches for the node containing that value.
 
 
 #### Stack Module
 
-The server module is creating an http server, defining route behavior and exporting an interface for starting and stopping the server. The server module exports an object containing start and stop methods. 
-
-The server module requires in http, logger, router, dotenv, and the book-router.js file. The server.start and stop methods return a new Promise with resolve and reject parameters. The start method contains an app.listen function that listens for the server start. The server.stop method has an app.close that turns the server off by setting the isServerOn variable to false.
+The stack module contains a class called StackLinkedList that is being exported from the module. This class contains an append method that accepts a node as a parameter and adds it to the end of the doubly linked list. The class also contains a push method that accepts a value and calls the append method to add a new value to the linked list. Finally, the class contains a method called pop that serves to remove a value from the end of the doubly linked list in order to model the LIFO properties of stacks.
 
 #### Binary Search Module
 
-The Binary Search module is a version of a binary search that accepts an array of objects
+The Binary Search module is a version of a binary search that accepts an array of objects as its first argument, and an integer as its second. A binary search should be conducted with an id and return the object in the array based on that id. If the id does not exist then -1 will be returned.
 
+#### Queue Module
 
-#### Test Module
+There is a queue module in place that functions with arrays and has not yet been refactored using doubly linked lists.
 
-server.test.js contains three tests each for the ```POST``` and ```GET``` methods and two tests for the ```DELETE``` method for a total of eight tests.
 
 ### Limitations
 
