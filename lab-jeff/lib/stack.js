@@ -1,24 +1,45 @@
 'use strict';
 
-let stack = module.exports = {};
+class DoublyLinkedList{
+  constructor(value){
+    this.value = value;
+    this.next = null;
+    this.previous = null;
+  }
 
-const dll = require('./doubly-linked-list');
 
-stack.createStack = () => {
+  push(value){
+    let node = new DoublyLinkedList(value);
+    this.append(node);
+  }
 
+  append(node){
 
-  return {
-    push: (value) => {
-      dll.append(value);
-    },
-    pop: () => {
-      while(this.next){
-        this.previous = this;
-        if(!this.next)
-          return this;
+    if(!this.next){
+      this.next = node;
+      node.previous = this;
+    }
+    else
+      this.next.append(node);
+
+    return this;
+  }
+
+  pop(){
+    if(!this.next){
+      if(this.previous) {
+        this.previous.next = null;
+      } else {
+        let temp = this.value;
+        this.value = undefined;
+        return temp;
       }
+      return this.value;
+    } else {
+      return this.next.pop();
+    }
+  }
 
-      return dll.remove(this);
-    },
-  };
-};
+}
+
+module.exports = DoublyLinkedList;

@@ -1,6 +1,5 @@
 'use strict';
 
-//vinicio - This is capital L because it's a class
 const DoublyLinkedList = require('../lib/doubly-linked-list');
 
 describe('doubly-linked-list.js',() => {
