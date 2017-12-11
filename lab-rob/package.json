@@ -1,0 +1,16 @@
+{
+  "name": "lab-10",
+  "version": "1.0.0",
+  "description": "CodeFellows Code 401d19 Lab 10",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest -i --coverage",
+    "lint": "eslint ."
+  },
+  "author": "Robert Reed",
+  "license": "MIT",
+  "dependencies": {
+    "eslint": "^4.13.0",
+    "jest": "^21.2.1"
+  }
+}
