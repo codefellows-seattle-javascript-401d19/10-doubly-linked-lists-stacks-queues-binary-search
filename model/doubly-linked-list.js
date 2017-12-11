@@ -33,6 +33,18 @@ class DoublyLinkedList{
     return this;
   }
 
+  preappend(node){
+    if(!(node instanceof DoublyLinkedList))
+      throw new TypeError('<node> should be an instance of DoublyLinkedList');
+    if(!this.previous){
+      this.previous = node;
+      node.next = this;
+    }
+    else
+      this.previous.append(node);
+    return this;
+  }
+
   remove(node){
     if(!(node instanceof DoublyLinkedList))
       throw new TypeError('<node> should be an instance of DoublyLinkedList');
