@@ -1,19 +1,5 @@
 'use strict';
 
-// var singlylinkedlist = {
-//   value: 1,
-//   next: {
-//     value: 2,
-//     next: {
-//       value: 3,
-//       next: {
-//         value: 4,
-//         next: null,
-//       },
-//     },
-//   },
-// };
-
 class DoublyLinkedList{
   constructor(value){
     this.value = value;
@@ -48,7 +34,6 @@ class DoublyLinkedList{
   remove(node){
     if(!(node instanceof DoublyLinkedList))
       throw new TypeError('<node> should be an instance of DoublyLinkedList');
-
     if(!this.previous){ // if there isn't a previous node
       if(this === node){  // if this is the node
         if(this.next){  // node found at beginning of doubly linked list.

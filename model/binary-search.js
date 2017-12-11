@@ -1,11 +1,5 @@
 'use strict';
 
-// let sampleArray = [
-//   {id: 10, name = 'Demi'},
-//   {id: 20, name = 'Sir Gregor'},
-//   {id: 30, name = 'The Hound'},
-// ]
-
 let binarySearch = (sortedObjectArray, id) => {
   let lowIndex = 0;
   let highIndex = sortedObjectArray.length -1;
@@ -23,10 +17,10 @@ let binarySearch = (sortedObjectArray, id) => {
     }else if(elementFound.id > id){
       highIndex = middleIndex -1;
     }else{
-      return middleIndex;
+      return elementFound;
     }
   }
-  return -1;
+  return null;
 };
 
 module.exports = binarySearch;
