@@ -109,4 +109,11 @@ describe('doubly-linked-list.js',() => {
 
     expect(result).toEqual(null);
   });
+
+  test('remove should return null when there is only one node in the linked list and it is removed', () => {
+    let node = new DoublyLinkedList(5);
+    let result = node.remove(node);
+
+    expect(result).toEqual(null);
+  });
 });
