@@ -1,27 +1,22 @@
 'use strict';
 
-let binarySearch = (sortedArray,itemToFind) => {
-  let lowIndex = 0;
-  let highIndex = sortedArray.length - 1;
-  
-  let steps = 0;
+const binarySearch = (sortedObjectArray,itemToFind) => {
+  if(!Array.isArray(sortedObjectArray)) throw new TypeError ('The argument must be an array');
 
+  let lowIndex = 0;
+  let highIndex = sortedObjectArray.length - 1;
 
   while(lowIndex <= highIndex){
     
-    steps++;
-    console.log(`Number of steps so far : ${steps}`);
-  
-
     let middleIndex = Math.floor((lowIndex + highIndex) / 2);
-    let elementFound = sortedArray[middleIndex];
+    let elementFound = sortedObjectArray[middleIndex].id;
     
-    if(elementFound < itemToFind){//  need to go to the right
+    if(elementFound < itemToFind) {
       lowIndex = middleIndex + 1;
-    } else if(elementFound > itemToFind){ //  need to go left
+    } else if (elementFound > itemToFind) {
       highIndex = middleIndex - 1;
     } else {
-      return middleIndex;
+      return sortedObjectArray[middleIndex];
     } 
   }
   return -1;
