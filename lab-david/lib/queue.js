@@ -1,7 +1,6 @@
 'use strict';
 
-// require in the linked lists
-
+// require in the linked lists for access
 const LinkedLists = require('./doubly-linked-lists');
 
 class Queue{
