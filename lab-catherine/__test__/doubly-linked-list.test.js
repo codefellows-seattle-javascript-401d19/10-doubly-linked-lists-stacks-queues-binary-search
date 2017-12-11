@@ -74,9 +74,9 @@ describe('linked-list.js',() => {
 
     expect(first.next.next.next).toEqual(null);
 
-    first.remove(first);
+    first = first.remove(first);
 
-    expect(first.next.previous).toEqual(null);
+    expect(first.next.previous.value).toEqual(20);
 
   });
 
@@ -103,6 +103,12 @@ describe('linked-list.js',() => {
 
     expect(first.next.next).toEqual(null);
 
+  });
+
+  test('testing to remove first (and only) node', () => {
+    let first = new DoublyLinkedList(10);
+    first = first.remove(first);
+    expect(first).toBeNull();
   });
 
   test('remove should throw an error if node is not an instance of DoublyLinkedList', () => {
