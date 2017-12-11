@@ -12,4 +12,8 @@ describe('binary-search.js', () => {
   test('binary search should return the specific object based on the id input', () => {
     expect(binarySearch(sampleArray, 1)).toEqual({id: 1, name: 'Chibi'});
   });
+
+  test('If there is no corresponding id, -1 will be returned', () => {
+    expect(binarySearch(sampleArray, 4)).toEqual(-1);
+  });
 });
