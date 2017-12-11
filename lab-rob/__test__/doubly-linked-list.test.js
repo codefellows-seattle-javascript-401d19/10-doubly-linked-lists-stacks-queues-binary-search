@@ -1,6 +1,6 @@
 'use strict';
 
-const DoublyLinkedList = require('../model/doublyLinkedList');
+const DoublyLinkedList = require('../model/doubly-linked-list');
 
 describe('doublyLinkedList.js', () => {
   let head, firstLink, secondLink, thirdLink;

@@ -12,7 +12,7 @@ This lab focuses on a variety of different data structures and algorithms. This 
   - eslint 
 
 ## How to use?
-Clone this repo, cd into `lab-rob`, run `npm install` and `require` into your projects.
+Clone this repo, cd into `lab-rob`, run `npm install` and `require` the modules into your projects.
 
 ## Contribute
 
@@ -27,7 +27,7 @@ Problem inspired by Vinicio Vladimir Sanchez Trejo.
 MIT. Use it up!
 
 
-# doublyLinkedList.js
+# doubly-linked-list.js
 
 ## Code Samples
 Create a list by instantiating a single node with a value.
@@ -128,7 +128,7 @@ longWords.remove();
 
 run `npm test` to check tests.
 
-#### doublyLinkedLists.js
+#### doubly-linked-list.js
 ##### Instantiation
 1. Instantiating a new object should return a node with a value and null previous/next properties.
 1. Instantiating a new object without a value should throw an error.
