@@ -1,0 +1,35 @@
+{
+  "name": "lab-cameron",
+  "version": "1.0.0",
+  "description": "Lab 10",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest -i --coverage",
+    "eslint": "lint *.js */**.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CameronMoorehead/10-doubly-linked-lists-stacks-queues-binary-search.git"
+  },
+  "keywords": [
+    "linked",
+    "lists",
+    "binary",
+    "search",
+    "stacks",
+    "queues"
+  ],
+  "author": "Cameron Moorehead",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/CameronMoorehead/10-doubly-linked-lists-stacks-queues-binary-search/issues"
+  },
+  "homepage": "https://github.com/CameronMoorehead/10-doubly-linked-lists-stacks-queues-binary-search#readme",
+  "devDependencies": {
+    "eslint": "^4.13.0",
+    "jest": "^21.2.1"
+  }
+}
