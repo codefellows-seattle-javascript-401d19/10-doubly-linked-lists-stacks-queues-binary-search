@@ -1,7 +1,7 @@
 # Code Fellows: Code 401d19: Full-Stack JavaScript
 
 ## Lab 10: Doubly Linked List, Binary Search, Stacks, and Queues
-This lab focuses on a variety of different data structures and algorithms. This package contains three modules. A singly linked list module, a doubly linked list module, and a binary search module. 
+This lab focuses on a variety of different data structures and algorithms. This package contains three modules. A stack module (built from a singly linked list), a doubly linked list module, and a binary search module. 
 
 ## Tech/frameworks/packages
 
@@ -12,7 +12,7 @@ This lab focuses on a variety of different data structures and algorithms. This 
   - eslint 
 
 ## How to use?
-Clone this repo, cd into `lab-rob`, run `npm install` and require into your projects.
+Clone this repo, cd into `lab-rob`, run `npm install` and `require` into your projects.
 
 ## Contribute
 
@@ -25,6 +25,7 @@ Problem inspired by Vinicio Vladimir Sanchez Trejo.
 ## License
 
 MIT. Use it up!
+
 
 # doublyLinkedList.js
 
@@ -78,6 +79,51 @@ longWords.remove();
 
 ```
 
+## Constructor
+#### DoublyLinkedList(value)
+
+  Value can be of any type, but an error is thrown if it is undefined. Returns a new doubly linked list of the form {previous: null, value: <value>, next: null}.
+
+## Methods
+#### append(node)
+  `node` must be an instance of `DoublyLinkedList` or an error is thrown. 
+  
+  Adds the node provided as the last node in the list. The calling node is returned, so chaining is possible.
+  
+#### prepend(node)
+  `node` must be an instance of `DoublyLinkedList` or an error is thrown. 
+  
+  Adds the node provided as the first node in the list, pushing the HEAD node to the second position. The calling node is returned, so chaining is possible.
+  
+#### insertAfter(node)
+  `node` must be an instance of `DoublyLinkedList` or an error is thrown. 
+  
+  Inserts the node provided after the calling node. The calling node is returned, so chaining is possible.
+  
+#### insertBefore(node)
+  `node` must be an instance of `DoublyLinkedList` or an error is thrown. 
+  
+  Inserts the node provided before the calling node. The calling node is returned, so chaining is possible.
+  
+#### remove()
+  
+  Removes the calling node from the list it is part of. 
+  
+  If it is the only node in the list, it is returned.
+
+  If it is the first node, then it is removed, and the second node takes it's spot and is returned.
+
+  If it is the last node, it's reference is removed from the second to last node, and the new last node is returned.
+
+  If it is a middle node, the node before it bypasses it as it's `next` reference, and the node behind it bypasses it as it's `previous` reference. The previous node is returned.
+
+#### filter(fn)
+  `fn` must be a function that evaluates to a boolean. 
+  
+  Use is similar to `Array.prototype.filter()`. Provide a callback function that evaluates a given node's value (the value is passed into the callback, not the node) and returns true or false based on a test of your choice.
+
+  A new list is returned that contains all of the nodes from the calling node to the last node that passed the test. Note that in order to test the entire list you must start from the head.
+
 ## Tests
 
 run `npm test` to check tests.
@@ -113,3 +159,80 @@ run `npm test` to check tests.
 ##### Error checking
 1. Calling append, prepend, insertAfter, or insertBefore with an argument that isn\'t a proper node will throw an error.
 1. Calling filter without a callback function will throw an error.
+
+
+
+# stack.js
+
+## Code Samples
+Create a stack by instantiating a new stack with no arguments.
+
+```
+let myStack = new stack();
+```
+
+Add items to the stack by pushing them. The length of the stack is returned.
+
+```
+myStack.push('hot dogs');
+  // 1
+myStack.push('french fries);\
+  // 2
+myStack.push('cotton candy');
+  // 3
+```
+
+Remove items from the stack by popping them off, which returns their value.
+
+```
+console.log(myStack.pop());
+  // cotton candy
+
+console.log(myStack.pop());
+  // french fries
+
+console.log(myStack.pop());
+  // hot dogs
+
+console.log(myStack.pop());
+  // __undefined__
+
+```
+
+## Constructor
+#### Stack()
+
+  Returns a new empty stack. Stack is built off of a singly linked list. 
+
+## Methods
+#### push(value)
+  `value` must be defined. 
+  
+  Adds the new value to the top of the stack.
+
+  Returns the length of the stack.
+
+#### pop()
+  
+  Returns the last value added to the stack.
+
+  Returns undefined if the stack is empty.
+  
+
+## Tests
+
+run `npm test` to check tests.
+
+#### stack.js
+##### push()
+1. push should add a new node to the first spot in the stack if the stack is empty.
+1. push should add a new node to the first spot in the stack, pushing the rest of the stack down, if the stack is not empty.
+1. You can push a stack inside of itself for no apparent benefit.
+1. push should throw an error if an undefined value is pushed into the stack.
+
+##### pop()
+1. pop should return the first value of the top node in the stack.
+1. pop should remove the top node and replace it with the second node.
+1. If the last node is popped, pop should return the node value and then set the value to undefined.
+1. If there are no nodes in the stack, pop should return undefined.
+1. push and pop should increment/decrement a counter each time it is used, but the counter should never drop below zero.

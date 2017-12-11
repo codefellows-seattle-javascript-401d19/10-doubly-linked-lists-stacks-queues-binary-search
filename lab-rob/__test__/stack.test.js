@@ -34,7 +34,7 @@ describe('stack.js', () => {
       expect(stack._data.value._data.value._data.value._data.value._data.next.value).toEqual(0);
     });
 
-    test('push should throw an error if an undefined value is pushed into the stack', () => {
+    test('push should throw an error if an undefined value is pushed into the stack.', () => {
       expect(() => {
         stack.push(undefined);
       }).toThrow();
