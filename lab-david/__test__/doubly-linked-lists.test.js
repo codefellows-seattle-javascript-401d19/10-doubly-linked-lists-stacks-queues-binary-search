@@ -2,7 +2,7 @@
 
 const DoublyLinkedList = require('../lib/doubly-linked-lists');
 
-describe('linked-lists.js', () => {
+describe('doubly-linked-lists.js', () => {
   test('A list with a single element, should have a value and no next', () => {
     let result = new DoublyLinkedList(7);
     expect(result.value).toEqual(7);
