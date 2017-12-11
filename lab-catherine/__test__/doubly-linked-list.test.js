@@ -1,6 +1,6 @@
 'use strict';
 
-const DoublyLinkedList = require('../lib/doubly-linked-list');
+const DoublyLinkedList = require('../model/doubly-linked-list');
 
 describe('linked-list.js',() => {
   test('A list with a single element, should have a value and no next', () => {

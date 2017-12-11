@@ -1,6 +1,6 @@
 'use strict';
 
-let Queue = require('../lib/queue');
+let Queue = require('../model/queue');
 
 describe('queue.js', () => {
   test('Queue should have FIFO behavior', () => {

@@ -1,6 +1,6 @@
 'use strict';
 
-let StackLinkedList = require('../lib/stack');
+let StackLinkedList = require('../model/stack');
 
 describe('stack.js', () => {
   test('Stacks should have Last In First Out (LIFO) behavior', () => {
