@@ -1,5 +1,9 @@
 'use strict';
 
+// require in the linked lists
+
+const LinkedLists = require('./doubly-linked-lists');
+
 class Queue{
   constructor(){
     this.__data = [];
