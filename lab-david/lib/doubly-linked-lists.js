@@ -3,8 +3,8 @@
 class DoublyLinkedLists{
   constructor(value){
     this.value = value;
-    this.next = next;
-    // this.previous = previous;
+    this.next = null;
+    this.previous = null;
   }
 
   append(node){
