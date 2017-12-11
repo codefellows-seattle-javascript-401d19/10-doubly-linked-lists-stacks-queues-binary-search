@@ -16,7 +16,7 @@ let binarySearch = (sortedArray, itemToFind) => {
       lowIndex=middleIndex+1;
     }else if(elementFound.id > itemToFind){
       highIndex=middleIndex-1;
-    }else{
+    }else{ 
       console.log(elementFound);
       return middleIndex;
     }
