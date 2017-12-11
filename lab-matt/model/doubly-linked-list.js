@@ -28,7 +28,7 @@ class LinkedList{
 
     if (!this.previous && this.value === node.value) {
       if (!this.next) {
-        console.log('Removal of only node: Setting value to null');
+        // console.log('Removal of only node: Setting value to null');
         this.value = null;
         return;
       }
