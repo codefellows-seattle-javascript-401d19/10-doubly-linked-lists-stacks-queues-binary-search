@@ -1,12 +1,11 @@
 'use strict';
 
-let stackFactory = require('../lib/stack');
+let StackLinkedList = require('../lib/stack');
 
 describe('stack.js', () => {
-  test('Stacks should have LIFO behavior', () => {
-    let stack = stackFactory.createStack();
+  test('Stacks should have Last In First Out (LIFO) behavior', () => {
+    let stack = new StackLinkedList(1);
 
-    stack.push(1);
     stack.push(2);
     stack.push(3);
 
