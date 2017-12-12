@@ -35,7 +35,7 @@ let binarySearch = (sortedObjectArray,id) => {
     }else if(elementFound > id){ // vinicio - I need to go left
       highIndex = middleIndex -1;
     }else{
-      return middleIndex;
+      return sortedObjectArray[middleIndex];
     } 
   }
   return -1;
