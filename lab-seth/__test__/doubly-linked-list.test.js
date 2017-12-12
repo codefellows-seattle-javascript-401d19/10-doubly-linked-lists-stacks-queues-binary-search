@@ -3,9 +3,16 @@
 const DoublyLinkedList = require('../lib/doubly-linked-list');
 
 describe('linked-list.js',() => {
+  //-------------------REGULAR CASES------------------
+  test('A list with a single element, should have a value and no next', () => {
+    let result = new DoublyLinkedList(5);
+    expect(result.value).toEqual(5);
+    expect(result.next).toEqual(null);
+    expect(result.previous).toEqual(null);
+  });    
+
   describe('Testing append method of doubly-linked-list.js', () => {
-    //-------------------REGULAR CASES------------------
-    test('append should properly modify the next property', () => {
+    test('APPEND should properly modify the next property', () => {
       let result = new DoublyLinkedList(5);
       result.append(new DoublyLinkedList(4));
       result.append(new DoublyLinkedList(10));
@@ -22,12 +29,6 @@ describe('linked-list.js',() => {
       expect(result.next.next.next).toEqual(null);
     });
     
-    test('A list with a single element, should have a value and no next', () => {
-      let result = new DoublyLinkedList(5);
-      expect(result.value).toEqual(5);
-      expect(result.next).toEqual(null);
-      expect(result.previous).toEqual(null);
-    });    
   });
 
   describe('Testing REMOVE method of linked-list.js', () => {
@@ -36,7 +37,6 @@ describe('linked-list.js',() => {
       let result = new DoublyLinkedList(5);
       result.append(new DoublyLinkedList(4));
       result.append(new DoublyLinkedList(10));
-
       expect(result.value).toEqual(5);
       expect(result.next.value).toEqual(4);
       expect(result.next.next.value).toEqual(10);      
@@ -51,7 +51,6 @@ describe('linked-list.js',() => {
       let result = new DoublyLinkedList(5);
       result.append(new DoublyLinkedList(4));
       result.append(new DoublyLinkedList(10));
-
       expect(result.value).toEqual(5);
       expect(result.next.value).toEqual(4);
       expect(result.next.next.value).toEqual(10); 
@@ -69,7 +68,6 @@ describe('linked-list.js',() => {
 
       first.append(second);
       first.append(third);
-
       expect(first.value).toEqual(5);
       expect(first.next.value).toEqual(4);
       expect(first.next.next.value).toEqual(10);
@@ -88,31 +86,23 @@ describe('linked-list.js',() => {
   });
   
   //TODO: ADD 4 TESTS FOR FIND METHOD
-  describe('Testing 3RD method of linked-list.js', () => {
+  describe('Testing FIND method of linked-list.js', () => {
     test('Find should properly return the node with the given value', () => {
       let result = new DoublyLinkedList(5);
       result.append(new DoublyLinkedList(4));
       result.append(new DoublyLinkedList(10));
-
       expect(result.value).toEqual(5);
       expect(result.next.value).toEqual(4);
       expect(result.next.next.value).toEqual(10);
 
-      console.log(result.find(10));
       expect((result.find(10)).value).toBe(10);
-      expect((result.find(5)).value).toBe(5);
+      expect((result.find(5)).value).toBe(5);      
+    });
 
+    test('Find should properly return the first node if there is only one node', () => {
+      let result = new DoublyLinkedList(5);
 
-      // expect(result.find(10)).toEqual(result);
-      // expect(result.find(result)).toEqual(result);
-      // expect(result.find(20)).toEqual(result.next);
-      // expect(result.find(result.next)).toEqual(result.next);
-      // expect(result.find(30)).toEqual(result.next.next);
-      // expect(result.find(result.next.next)).toEqual(result.next.next);
-
-      
-
-
+      expect(result.value).toEqual(5);
     });
   });
 });
