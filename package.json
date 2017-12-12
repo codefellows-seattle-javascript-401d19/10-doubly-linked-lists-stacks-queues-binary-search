@@ -1,0 +1,23 @@
+{
+  "name": "10-doubly-linked-lists-stacks-queues-binary-search",
+  "version": "1.0.0",
+  "description": "lab 10",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest -i"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hazzed/10-doubly-linked-lists-stacks-queues-binary-search.git"
+  },
+  "author": "Dalton",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hazzed/10-doubly-linked-lists-stacks-queues-binary-search/issues"
+  },
+  "homepage": "https://github.com/hazzed/10-doubly-linked-lists-stacks-queues-binary-search#readme",
+  "dependencies": {
+    "eslint": "^4.13.1",
+    "jest": "^21.2.1"
+  }
+}
