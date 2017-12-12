@@ -1,6 +1,4 @@
 'use strict';
-
-
 class Stack {
   constructor(value) {
     this.value = value;
@@ -12,19 +10,16 @@ class Stack {
       this.next = node;
       return;
     }
-
     this.next.push(node);
     return;
   }
 
   pop() {
     let popped = this.value;
-
     if(!this.next) {
       this.value = null;
       return popped;
     }
-
     if(!this.next.next) {
       popped = this.next.value;
       this.next = null;
@@ -33,6 +28,4 @@ class Stack {
     return this.next.pop();
   }
 }
-
 module.exports = Stack;
-

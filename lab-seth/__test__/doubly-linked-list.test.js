@@ -85,7 +85,6 @@ describe('linked-list.js',() => {
 
   });
   
-  //TODO: ADD 4 TESTS FOR FIND METHOD
   describe('Testing FIND method of linked-list.js', () => {
     test('Find should properly return the node with the given value', () => {
       let result = new DoublyLinkedList(5);
