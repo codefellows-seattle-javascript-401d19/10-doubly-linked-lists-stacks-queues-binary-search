@@ -50,11 +50,12 @@ class DoublyLinkedList{
   }
 
   find(value){
-    if(!(node instanceof DoublyLinkedList))
-        throw new TypeError('<node> should be an instance of DoublyLinkedList');
-    if() {
-
-    }  
+    if(this.value === value) {
+      return this;
+    }else{
+      return this.next.find(value);
+    }
+    // return null;
 
   }
 }

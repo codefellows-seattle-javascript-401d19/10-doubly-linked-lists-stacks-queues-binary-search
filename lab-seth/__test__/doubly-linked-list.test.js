@@ -98,7 +98,19 @@ describe('linked-list.js',() => {
       expect(result.next.value).toEqual(4);
       expect(result.next.next.value).toEqual(10);
 
-      expect(result.find(10).value).toEqual(10);
+      console.log(result.find(10));
+      expect((result.find(10)).value).toBe(10);
+      expect((result.find(5)).value).toBe(5);
+
+
+      // expect(result.find(10)).toEqual(result);
+      // expect(result.find(result)).toEqual(result);
+      // expect(result.find(20)).toEqual(result.next);
+      // expect(result.find(result.next)).toEqual(result.next);
+      // expect(result.find(30)).toEqual(result.next.next);
+      // expect(result.find(result.next.next)).toEqual(result.next.next);
+
+      
 
 
     });
