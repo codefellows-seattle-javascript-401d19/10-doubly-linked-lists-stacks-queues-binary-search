@@ -55,8 +55,6 @@ class DoublyLinkedList{
     }else{
       return this.next.find(value);
     }
-    // return null;
-
   }
 }
 
