@@ -1,26 +1,38 @@
 'use strict';
 
-let stack = module.exports = {};
 
-stack.createStack = () => {
-  //-----------------------------
-  // Vinicio - This won't be accessible outside the module
-  //-----------------------------
-  let data = [];
-  //-----------------------------
+class Stack {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+  
+  push(node) {
+    if(!this.next){
+      this.next = node;
+      return;
+    }
 
-  //TODO: IMPLEMENT USING (INTERNALLY) A LINKED LIST
+    this.next.push(node);
+    return;
+  }
 
-  return {
-    //TODO: FINISH PUSH METHOD
-    push: (value) => {
-      data.push(value);
-    },
-    pop: () => {
-      //TODO: FINISH POP METHOD
-      return data.pop();
-    },
-  };
-};
+  pop() {
+    let popped = this.value;
 
+    if(!this.next) {
+      this.value = null;
+      return popped;
+    }
+
+    if(!this.next.next) {
+      popped = this.next.value;
+      this.next = null;
+      return popped;
+    }
+    return this.next.pop();
+  }
+}
+
+module.exports = Stack;
 
