@@ -1,0 +1,23 @@
+{
+  "name": "lab-anthony",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest -i --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Twandalon/10-doubly-linked-lists-stacks-queues-binary-search.git"
+  },
+  "author": "Anthony Robinson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Twandalon/10-doubly-linked-lists-stacks-queues-binary-search/issues"
+  },
+  "homepage": "https://github.com/Twandalon/10-doubly-linked-lists-stacks-queues-binary-search#readme",
+  "devDependencies": {
+    "eslint": "^4.13.0",
+    "jest": "^21.2.1"
+  }
+}
