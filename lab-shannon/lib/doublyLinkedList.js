@@ -26,18 +26,16 @@ class DoublyLinkedList{
     }
 
     return this;
-  };
+  }
 
   remove(nodeValue){
     if(this.value === nodeValue && this.next === null){
-      this.value = null;
 
-      return this;
+      return null;
     }else if(this.value === nodeValue && this.next !== null){
-      this.value = null;
-      this.next.previous = this.previous;
+      this.next.previous = null;
 
-      return this;
+      return this.next;
     }
 
     if(this.next.value === nodeValue){
@@ -58,7 +56,7 @@ class DoublyLinkedList{
     }
 
     return this;
-  };
+  }
 
   prepend(node){
     if(!(node instanceof DoublyLinkedList)){
