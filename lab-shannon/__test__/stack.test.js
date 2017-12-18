@@ -1,18 +1,20 @@
 'use strict';
 
-const Stack = require(`../lib/stack`);
+const stackFactory = require(`../lib/stack`);
 
 describe(`stack.js`, () => {
   test.only(`The last element added should be the first element removed; i.e. should be LIFO behavior`, () => {
-    // stack.push(new Stack(4));
-    // stack.push(new Stack(19));
-    // stack.push(new Stack(22));
+    let stack = stackFactory.createStack();
+    console.log(stack.push(2));
+    // stack.push(2);
+    // stack.push(4);
+    // stack.push(19);
+    // stack.push(22);
 
     // expect(stack.pop()).toBe(22);
     // expect(stack.pop()).toBe(19);
     // expect(stack.pop()).toBe(4);
     // expect(stack.pop()).toBe(2);
-    // expect(stack.pop()).toBe(1);
     // expect(stack.pop()).toBe(undefined);
   });
 
