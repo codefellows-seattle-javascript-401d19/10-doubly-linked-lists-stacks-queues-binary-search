@@ -9,9 +9,9 @@ class Stack{
 
 // add something to the top of the stack
   push(node){
-    if(!(node instanceof Stack)){
-      throw new TypeError(`To add a value to the stack you must provide an instance of Stack`);
-    }
+    // if(!(node instanceof Stack)){
+    //   throw new TypeError(`To add a value to the stack you must provide an instance of Stack`);
+    // }
 
     if(this.value === undefined){
       throw new Error(`The stack does not exist. You must create one before pushing a new value`);
@@ -28,5 +28,7 @@ class Stack{
   }
 
 // remove something from the top of the stack
-  pop(node){}
+  pop(){
+    
+  }
 }
