@@ -1,6 +1,5 @@
 'use strict';
 
-
 class DoublyLinkedList{
   constructor(value){
     this.value = value;
@@ -69,5 +68,4 @@ class DoublyLinkedList{
     return this;
   }
 }
-
 module.exports = DoublyLinkedList;
