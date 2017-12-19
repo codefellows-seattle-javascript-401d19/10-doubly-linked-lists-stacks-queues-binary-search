@@ -14,7 +14,7 @@ describe(`stack.js`, () => {
     expect(stack.pop().value).toBe(19);
     expect(stack.pop().value).toBe(4);
     expect(stack.pop().value).toBe(2);
-    // expect(stack.pop()).toBe(undefined);
+    expect(stack.pop()).toBe(null);
   });
 
   test(`The last element added should be the first element removed; i.e. should be LIFO behavior`, () => {
