@@ -18,12 +18,13 @@ class Stack {
 
   // remove something from the top of the stack
   pop(){
-    console.log(this.list);
     if(this.list === null){
       return null;
     }
     else if(this.list.next === null){
-      return this.list;
+      let poppedNode = this.list;
+      this.list = null;
+      return poppedNode;
     }
     let node = this.list;
     while(node.next.next !== null){
