@@ -16,6 +16,8 @@ stack.createStack = () => {
     pop: () => {
       if(this.next === null){
         DoublyLinkedList.remove(this);
+      }else{
+        this.next.pop();
       }
     },
   };

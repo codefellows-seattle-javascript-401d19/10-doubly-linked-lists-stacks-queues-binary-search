@@ -3,7 +3,7 @@
 const stackFactory = require(`../lib/stack`);
 
 describe(`stack.js`, () => {
-  test.only(`The last element added should be the first element removed; i.e. should be LIFO behavior`, () => {
+  test(`The last element added should be the first element removed; i.e. should be LIFO behavior`, () => {
     let stack = stackFactory.createStack();
     console.log(stack.push(2));
     // stack.push(2);

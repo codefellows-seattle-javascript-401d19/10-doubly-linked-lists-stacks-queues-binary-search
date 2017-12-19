@@ -52,9 +52,9 @@ describe(`doublyLinkedList.js`, () => {
   })
 
   test(`The remove method should set the node value to null if removing the only node in the list`, () => {
-    singleList.remove(5);
+    let newList = singleList.remove(5);
 
-    expect(singleList.value).toBe(null);
+    expect(newList).toBe(null);
   })
 
   test(`The remove method should throw an error if a node with that value does not exist`, () => {
