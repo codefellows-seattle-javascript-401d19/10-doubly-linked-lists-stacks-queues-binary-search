@@ -45,10 +45,9 @@ describe(`doublyLinkedList.js`, () => {
   })
 
   test(`The remove method should set the node value to null if removing the first item in a list and redirect the deleted node's .next and .previous references`, () => {
-    shortList.remove(9);
+    let updatedList = shortList.remove(9);
 
-    expect(shortList.value).toEqual(null);
-    expect(shortList.next.previous).toEqual(null);
+    expect(updatedList.value).toEqual(11);
   })
 
   test(`The remove method should set the node value to null if removing the only node in the list`, () => {
