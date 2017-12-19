@@ -2,7 +2,7 @@
 let DoublyLinkedList = require(`./doublyLinkedList`);
 
 class Stack {
-  constructor() {
+  constructor(value) {
     this.list = null;
   }
   // add something to the top of the stack
@@ -21,12 +21,12 @@ class Stack {
     if(this.list === null){
       return null;
     }
-    else if(this.list.next === null){
-      return this.list.remove(this.value);
-    }else{
-      console.log(this.list.next);
-      // this.list.next.pop();
+    let node = this.list;
+    while(node.next !== null){
+      node = node.next;
     }
+    // return this.list.remove(node.value);    // not sure about this line
+    return node.value;    // do I just want the node?
   }
 };
 
