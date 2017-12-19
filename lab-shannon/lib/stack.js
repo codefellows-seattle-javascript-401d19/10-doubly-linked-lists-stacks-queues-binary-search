@@ -22,11 +22,13 @@ class Stack {
       return null;
     }
     let node = this.list;
-    while(node.next !== null){
+    while(node.next.next !== null){
       node = node.next;
     }
-    // return this.list.remove(node.value);    // not sure about this line
-    return node.value;    // do I just want the node?
+    // return this.list.remove(node.value);    // Do I even need this? The two lines below seem to work fine
+    let poppedNode = node.next;
+    node.next = null;
+    return poppedNode;
   }
 };
 

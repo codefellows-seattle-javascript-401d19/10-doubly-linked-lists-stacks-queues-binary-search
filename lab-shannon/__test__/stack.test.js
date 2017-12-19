@@ -10,10 +10,10 @@ describe(`stack.js`, () => {
     stack.push(19);
     stack.push(22);
 
-    expect(stack.pop()).toBe(22);
-    // expect(stack.pop()).toBe(19);
-    // expect(stack.pop()).toBe(4);
-    // expect(stack.pop()).toBe(2);
+    expect(stack.pop().value).toBe(22);
+    expect(stack.pop().value).toBe(19);
+    expect(stack.pop().value).toBe(4);
+    // expect(stack.pop().value).toBe(2);
     // expect(stack.pop()).toBe(undefined);
   });
 
