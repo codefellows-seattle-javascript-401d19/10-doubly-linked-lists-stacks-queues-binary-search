@@ -13,7 +13,7 @@ describe(`stack.js`, () => {
     expect(stack.pop().value).toBe(22);
     expect(stack.pop().value).toBe(19);
     expect(stack.pop().value).toBe(4);
-    // expect(stack.pop().value).toBe(2);
+    expect(stack.pop().value).toBe(2);
     // expect(stack.pop()).toBe(undefined);
   });
 

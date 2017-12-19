@@ -21,6 +21,9 @@ class Stack {
     if(this.list === null){
       return null;
     }
+    else if(this.list.next === null){
+      return this.list;
+    }
     let node = this.list;
     while(node.next.next !== null){
       node = node.next;
