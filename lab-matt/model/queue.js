@@ -1,6 +1,6 @@
 'use strict';
 
-class Stack {
+class Queue {
   constructor(value) {
     this.value = value;
     this.next = null;
@@ -30,4 +30,4 @@ class Stack {
   }
 }
 
-module.exports = Stack;
+module.exports = Queue;
