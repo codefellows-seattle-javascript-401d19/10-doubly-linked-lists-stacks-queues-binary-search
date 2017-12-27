@@ -5,7 +5,9 @@ Doubly Linked Lists, Binary Search, Stacks and Queues
 I was motivated by an extreme desire to learn web development which led me to enroll in this program which ultimately led me to this assignment. 
 
 ## Modules
-
+- Doubly Linked Lists
+- Binary Search
+- Queue
 
 ## Tech/framework used
 Node.JS, Javascript, 
