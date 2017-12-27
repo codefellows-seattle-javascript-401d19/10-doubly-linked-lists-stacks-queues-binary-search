@@ -18,12 +18,6 @@ describe('doubly-linked-lists.js', () => {
     expect(result.value).toEqual(7);
     expect(result.previous).toEqual(null);
 
-    expect(result.next.value).toEqual(9);
-    expect(result.next.previous).toEqual(7);
-
-    expect(result.next.next.value).toEqual(11);
-    expect(result.next.previous.previous).toEqual(7);
-
     expect(result.next.next.next).toEqual(null);    
   });
 
@@ -34,12 +28,6 @@ describe('doubly-linked-lists.js', () => {
     
     expect(result.value).toEqual(7);
     expect(result.previous).toEqual(null);
-
-    expect(result.next.value).toEqual(9);
-    expect(result.next.previous).toEqual(7);
-
-    expect(result.next.next.value).toEqual(11);
-    expect(result.next.previous.previous).toEqual(7);
 
     expect(result.next.next.next).toEqual(null);  
   });
